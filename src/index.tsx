@@ -1,15 +1,5 @@
 import Mock from 'mockjs';
 
-// 随机字符串简单版
-// ref: https://github.com/doly-dev/util-helpers/blob/master/src/randomString.js
-const randomString = (str: string, len = 1, preString = '') => {
-  while (len-- > 0) {
-    const rs = str[Math.floor(Math.random() * str.length)];
-    return preString + rs;
-  }
-  return preString;
-}
-
 // TODO: 规划一些常用的生成数据
 Mock.Random.extend({
   country() {
@@ -39,7 +29,8 @@ Mock.Random.extend({
   },
 
   phone() {
-    return `1${randomString('3456789')}${Mock.mock(/\d{9}/)}`;
+    // https://github.com/nuysoft/Mock/wiki/Helper#randompick-arr-
+    return `1${this.pick('3456789'.split(''))}${Mock.mock(/\d{9}/)}`;
   }
 });
 
