@@ -1,0 +1,8 @@
+{
+  "name": "mockjs-extend",
+  "version": "1.0.0-alpha.0",
+  "main": "index.js",
+  "repository": "git@github.com:caijf/mockjs-extend.git",
+  "author": "caijf <369756941@qq.com>",
+  "license": "MIT"
+}
