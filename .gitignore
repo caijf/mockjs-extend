@@ -11,6 +11,9 @@ coverage
 # production
 build
 zip
+dist
+es
+cjs
 
 # logs
 *.log

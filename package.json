@@ -1,15 +1,37 @@
 {
   "name": "mockjs-extend",
   "version": "1.0.0-alpha.0",
-  "main": "index.js",
+  "main": "cjs/index.js",
+  "module": "es/index.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "build": "npm run build:cjs && npm run build:es",
+    "build:cjs": "rm -rf ./cjs && tsc --outDir cjs -t es3 -m commonjs",
+    "build:es": "rm -rf ./es && tsc --outDir es -t es3 -m esnext",
+    "prepublishOnly": "npm test && npm run build"
+  },
+  "files": [
+    "cjs",
+    "es"
+  ],
   "repository": "git@github.com:caijf/mockjs-extend.git",
   "author": "caijf <369756941@qq.com>",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12",
+    "@types/jest": "^28.1.1",
     "@types/mockjs": "^1.0.6",
-    "typescript": "^4.7.2"
+    "@types/node": "^17.0.41",
+    "babel-jest": "^28.1.1",
+    "jest": "^28.1.1",
+    "typescript": "^4.7.3"
   },
   "dependencies": {
-    "mockjs": "^1.1.0"
+    "bankcard": "^3.0.2",
+    "intl-tel-code": "^1.0.0",
+    "mockjs": "^1.1.0",
+    "util-helpers": "^4.10.0"
   }
 }
