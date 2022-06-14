@@ -1,4 +1,5 @@
 import Mock from 'mockjs';
+import { createSocialCreditCode } from './unifiedIndentifier.util';
 
 const countries = [
   '阿根廷',
@@ -76,5 +77,10 @@ Mock.Random.extend({
   currencySymbol() {
     return this.pick(currencies).symbol;
   },
+
+  // 统一社会信用代码
+  unifiedIdentifier() {
+    return createSocialCreditCode();
+  }
 });
 

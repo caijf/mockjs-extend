@@ -199,3 +199,13 @@ Mock.Random.currencyName(); // => 柬埔寨瑞尔
 ```text
 Mock.Random.currencySymbol(); // => ៛
 ```
+
+#### Mock.Random.unifiedIdentifier()
+
+> 非真实信息，仅供测试使用，请勿用于非法用途。
+
+统一社会信用代码
+
+```text
+Mock.Random.unifiedIdentifier(); // => 35210703CDMKJ424LA
+```

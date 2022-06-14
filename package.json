@@ -31,6 +31,7 @@
   "dependencies": {
     "bankcard": "^3.0.2",
     "intl-tel-code": "^1.0.0",
+    "lcn": "^4.1.0",
     "mockjs": "^1.1.0",
     "util-helpers": "^4.10.0"
   }

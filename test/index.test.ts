@@ -58,6 +58,7 @@ describe('mockjs-extend', () => {
     const currency = Mock.Random.currency();
     const currencyName = Mock.Random.currencyName();
     const currencySymbol = Mock.Random.currencySymbol();
+    const unifiedIdentifier = Mock.Random.unifiedIdentifier();
 
     console.log('tel:', tel);
     console.log('phone:', phone);
@@ -66,6 +67,7 @@ describe('mockjs-extend', () => {
     console.log('currency:', currency);
     console.log('currencyName:', currencyName);
     console.log('currencySymbol:', currencySymbol);
+    console.log('unifiedIdentifier:', unifiedIdentifier);
 
     expect(tel).toBeTruthy();
     expect(phone).toBeTruthy();
@@ -74,5 +76,6 @@ describe('mockjs-extend', () => {
     expect(currency).toBeTruthy();
     expect(currencyName).toBeTruthy();
     expect(currencySymbol).toBeTruthy();
+    expect(unifiedIdentifier).toBeTruthy();
   });
-})
+});
