@@ -1,6 +1,6 @@
 {
   "name": "mockjs-extend",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "cjs/index.js",
   "module": "es/index.js",
   "scripts": {
