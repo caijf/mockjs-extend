@@ -131,7 +131,7 @@ Mock.Random.cardTypeName(); // => 储蓄卡
 英文国际银行名称
 
 ```text
-Mock.Random.globalBankName(); // => 大通曼哈顿银行
+Mock.Random.globalBankName(); // => Dresdner Bank
 ```
 
 #### Mock.Random.cglobalBankName()
