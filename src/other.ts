@@ -1,26 +1,27 @@
 import Mock from 'mockjs';
 import { createSocialCreditCode } from './unifiedIndentifier.util';
 
+// ref: https://www.npmjs.com/package/country-code
 const countries = [
-  '阿根廷',
-  '澳大利亚',
-  '巴西',
-  '加拿大',
-  '中国',
-  '法国',
-  '德国',
-  '印度',
-  '印度尼西亚',
-  '意大利',
-  '日本',
-  '韩国',
-  '墨西哥',
-  '俄罗斯',
-  '沙特阿拉伯',
-  '南非',
-  '土耳其',
-  '英国',
-  '美国',
+  { alpha2: 'AR', alpha3: 'ARG', cn: '阿根廷', en: 'Argentina' },
+  { alpha2: 'AU', alpha3: 'AUS', cn: '澳大利亚', en: 'Australia' },
+  { alpha2: 'BR', alpha3: 'BRA', cn: '巴西', en: 'Brazil' },
+  { alpha2: 'CA', alpha3: 'CAN', cn: '加拿大', en: 'Canada' },
+  { alpha2: 'CN', alpha3: 'CHN', cn: '中国', en: 'China' },
+  { alpha2: 'FR', alpha3: 'FRA', cn: '法国', en: 'France' },
+  { alpha2: 'DE', alpha3: 'DEU', cn: '德国', en: 'Germany' },
+  { alpha2: 'IN', alpha3: 'IND', cn: '印度', en: 'India' },
+  { alpha2: 'ID', alpha3: 'IDN', cn: '印度尼西亚', en: 'Indonesia' },
+  { alpha2: 'IT', alpha3: 'ITA', cn: '意大利', en: 'Italy' },
+  { alpha2: 'JP', alpha3: 'JPN', cn: '日本', en: 'Japan' },
+  { alpha2: 'KR', alpha3: 'KOR', cn: '韩国', en: 'Korea, Republic of' },
+  { alpha2: 'MX', alpha3: 'MEX', cn: '墨西哥', en: 'Mexico' },
+  { alpha2: 'RU', alpha3: 'RUS', cn: '俄罗斯', en: 'Russian Federation' },
+  { alpha2: 'SA', alpha3: 'SAU', cn: '沙特阿拉伯', en: 'Saudi Arabia' },
+  { alpha2: 'ZA', alpha3: 'ZAF', cn: '南非', en: 'South Africa' },
+  { alpha2: 'TR', alpha3: 'TUR', cn: '土耳其', en: 'Turkey' },
+  { alpha2: 'GB', alpha3: 'GBR', cn: '英国', en: 'United Kingdom' },
+  { alpha2: 'US', alpha3: 'USA', cn: '美国', en: 'United States' }
 ];
 
 const currencies = [
@@ -58,9 +59,20 @@ Mock.Random.extend({
     return this.phone();
   },
 
-  // 国家
+  // 国家英文名称
   country() {
-    return this.pick(countries);
+    return this.pick(countries).en;
+  },
+
+  // 国家中文名称
+  countryName() {
+    return this.pick(countries).cn;
+  },
+
+  // 国家二/三字码
+  countryCode(len = 3) {
+    let fieldName = len === 2 ? 'alpha2' : 'alpha3';
+    return this.pick(countries)[fieldName];
   },
 
   // 货币

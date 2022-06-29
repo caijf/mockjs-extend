@@ -170,10 +170,31 @@ Mock.Random.mobile(); // => 14561418878
 
 #### Mock.Random.country()
 
-国家
+国家英文名称
 
 ```text
-Mock.Random.country(); // => 法国
+Mock.Random.country(); // => Turkey
+```
+
+#### Mock.Random.countryName()
+
+国家中文名称
+
+```text
+Mock.Random.countryName(); // => 土耳其
+```
+
+#### Mock.Random.countryCode(len=3)
+
+国家二/三字码
+
+**len**
+
+默认为 3 ，可选。2-二字码 3-三字码
+
+```text
+Mock.Random.countryCode(); // => TUR
+Mock.Random.countryCode(2); // => TR
 ```
 
 #### Mock.Random.currency()

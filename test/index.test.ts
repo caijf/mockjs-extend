@@ -55,6 +55,8 @@ describe('mockjs-extend', () => {
     const phone = Mock.Random.phone();
     const mobile = Mock.Random.mobile();
     const country = Mock.Random.country();
+    const countryName = Mock.Random.countryName();
+    const countryCode = Mock.Random.countryCode();
     const currency = Mock.Random.currency();
     const currencyName = Mock.Random.currencyName();
     const currencySymbol = Mock.Random.currencySymbol();
@@ -64,6 +66,8 @@ describe('mockjs-extend', () => {
     console.log('phone:', phone);
     console.log('mobile:', mobile);
     console.log('country:', country);
+    console.log('countryName:', countryName);
+    console.log('countryCode:', countryCode);
     console.log('currency:', currency);
     console.log('currencyName:', currencyName);
     console.log('currencySymbol:', currencySymbol);
@@ -73,6 +77,8 @@ describe('mockjs-extend', () => {
     expect(phone).toBeTruthy();
     expect(mobile).toBeTruthy();
     expect(country).toBeTruthy();
+    expect(countryName).toBeTruthy();
+    expect(countryCode).toBeTruthy();
     expect(currency).toBeTruthy();
     expect(currencyName).toBeTruthy();
     expect(currencySymbol).toBeTruthy();
