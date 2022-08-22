@@ -1,19 +1,19 @@
 # mockjs-extend
 
-基于 mockjs 扩展生成随机数据
+基于 [mockjs](https://github.com/nuysoft/Mock/wiki) 扩展生成随机数据
 
 ## 使用
 
 ### 安装
 
 ```bash
-npm install mockjs-extend
+npm install mockjs-extend --save-dev
 ```
 
 或
 
 ```bash
-yarn add mockjs-extend
+yarn add mockjs-extend --dev
 ```
 
 ### 示例
