@@ -1,4 +1,5 @@
+import Mock from "mockjs";
 import './bank';
 import './other';
 
-export { default } from "mockjs";
+export default Mock;
