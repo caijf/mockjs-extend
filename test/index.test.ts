@@ -1,5 +1,4 @@
-import Mock from 'mockjs';
-import '../src';
+import Mock from '../src';
 
 describe('mockjs-extend', () => {
   it('bank', () => {
