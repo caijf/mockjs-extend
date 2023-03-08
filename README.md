@@ -19,9 +19,8 @@ yarn add mockjs-extend --dev
 ### 示例
 
 ```javascript
-// mock 文件中引入
-import Mock from 'mockjs';
-import 'mockjs-extend';
+// 默认导出 mockjs ，扩展了大量的模拟数据
+import Mock from 'mockjs-extend';
 
 export default {
   'POST xxx/xxx': Mock.mock({
