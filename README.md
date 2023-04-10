@@ -19,11 +19,11 @@ yarn add mockjs-extend --dev
 ### 示例
 
 ```javascript
-// 默认导出 mockjs ，扩展了大量的模拟数据
-import Mock from 'mockjs-extend';
+// Mockjs 等同于 mockjs 模块，同时扩展了大量的模拟数据
+import { Mockjs } from 'mockjs-extend';
 
 export default {
-  'POST xxx/xxx': Mock.mock({
+  'POST xxx/xxx': Mockjs.mock({
     errCode: '0000',
     errMsg: 'mock success',
     'data|2-10': [
@@ -45,29 +45,29 @@ export default {
 
 ## 文档
 
-使用 Mock.Random.exted 扩展。
+使用 Mockjs.Random.exted 扩展。
 
 ### 银行
 
-#### Mock.Random.bankCode()
+#### Mockjs.Random.bankCode()
 
 银行编码
 
 ```text
-Mock.Random.bankCode(); // => ICBC
-Mock.Random.bankCode(); // => URB
+Mockjs.Random.bankCode(); // => ICBC
+Mockjs.Random.bankCode(); // => URB
 ```
 
-#### Mock.Random.bankName()
+#### Mockjs.Random.bankName()
 
 银行名称
 
 ```text
-Mock.Random.bankName(); // => 哈尔滨银行
-Mock.Random.bankName(); // => 乌海银行
+Mockjs.Random.bankName(); // => 哈尔滨银行
+Mockjs.Random.bankName(); // => 乌海银行
 ```
 
-#### Mock.Random.bankCardNo(mask=false, format=false)
+#### Mockjs.Random.bankCardNo(mask=false, format=false)
 
 银行卡号
 
@@ -80,110 +80,110 @@ Mock.Random.bankName(); // => 乌海银行
 格式化。可选。
 
 ```text
-Mock.Random.bankCardNo(); // 5156729973651523
-Mock.Random.bankCardNo(true); // 515672******1523
-Mock.Random.bankCardNo(true, true); // 5156 72** **** 1523
+Mockjs.Random.bankCardNo(); // 5156729973651523
+Mockjs.Random.bankCardNo(true); // 515672******1523
+Mockjs.Random.bankCardNo(true, true); // 5156 72** **** 1523
 ```
 
-#### Mock.Random.bankCardBin()
+#### Mockjs.Random.bankCardBin()
 
 银行卡 bin
 
 ```text
-Mock.Random.bankCardBin(); // => 526410
+Mockjs.Random.bankCardBin(); // => 526410
 ```
 
-#### Mock.Random.swiftCode()
+#### Mockjs.Random.swiftCode()
 
 SWIFT CODE
 
 ```text
-Mock.Random.swiftCode(); // => JYSQJSKA
+Mockjs.Random.swiftCode(); // => JYSQJSKA
 ```
 
-#### Mock.Random.bankBranchCode()
+#### Mockjs.Random.bankBranchCode()
 
 分行代码
 
 ```text
-Mock.Random.bankBranchCode(); // => IYX
+Mockjs.Random.bankBranchCode(); // => IYX
 ```
 
-#### Mock.Random.cardType()
+#### Mockjs.Random.cardType()
 
 银行卡类型
 
 ```text
-Mock.Random.cardType(); // => CC
+Mockjs.Random.cardType(); // => CC
 ```
 
-#### Mock.Random.cardTypeName()
+#### Mockjs.Random.cardTypeName()
 
 银行卡类型名称
 
 ```text
-Mock.Random.cardTypeName(); // => 储蓄卡
+Mockjs.Random.cardTypeName(); // => 储蓄卡
 ```
 
-#### Mock.Random.globalBankName()
+#### Mockjs.Random.globalBankName()
 
 英文国际银行名称
 
 ```text
-Mock.Random.globalBankName(); // => Dresdner Bank
+Mockjs.Random.globalBankName(); // => Dresdner Bank
 ```
 
-#### Mock.Random.cglobalBankName()
+#### Mockjs.Random.cglobalBankName()
 
 中文国际银行名称
 
 ```text
-Mock.Random.cglobalBankName(); // => 大通曼哈顿银行
+Mockjs.Random.cglobalBankName(); // => 大通曼哈顿银行
 ```
 
 ### 其他
 
-#### Mock.Random.tel()
+#### Mockjs.Random.tel()
 
 电话号码
 
 ```text
-Mock.Random.tel(); // => 37316547
+Mockjs.Random.tel(); // => 37316547
 ```
 
-#### Mock.Random.phone()
+#### Mockjs.Random.phone()
 
 手机号码
 
 ```text
-Mock.Random.phone(); // => 17837351484
+Mockjs.Random.phone(); // => 17837351484
 ```
 
-#### Mock.Random.mobile()
+#### Mockjs.Random.mobile()
 
 手机号码，同 phone
 
 ```text
-Mock.Random.mobile(); // => 14561418878
+Mockjs.Random.mobile(); // => 14561418878
 ```
 
-#### Mock.Random.country()
+#### Mockjs.Random.country()
 
 国家英文名称
 
 ```text
-Mock.Random.country(); // => Turkey
+Mockjs.Random.country(); // => Turkey
 ```
 
-#### Mock.Random.countryName()
+#### Mockjs.Random.countryName()
 
 国家中文名称
 
 ```text
-Mock.Random.countryName(); // => 土耳其
+Mockjs.Random.countryName(); // => 土耳其
 ```
 
-#### Mock.Random.countryCode(len=3)
+#### Mockjs.Random.countryCode(len=3)
 
 国家二/三字码
 
@@ -192,40 +192,40 @@ Mock.Random.countryName(); // => 土耳其
 默认为 3 ，可选。2-二字码 3-三字码
 
 ```text
-Mock.Random.countryCode(); // => TUR
-Mock.Random.countryCode(2); // => TR
+Mockjs.Random.countryCode(); // => TUR
+Mockjs.Random.countryCode(2); // => TR
 ```
 
-#### Mock.Random.currency()
+#### Mockjs.Random.currency()
 
 货币
 
 ```text
-Mock.Random.currency(); // => NZD
+Mockjs.Random.currency(); // => NZD
 ```
 
-#### Mock.Random.currencyName()
+#### Mockjs.Random.currencyName()
 
 货币名称
 
 ```text
-Mock.Random.currencyName(); // => 柬埔寨瑞尔
+Mockjs.Random.currencyName(); // => 柬埔寨瑞尔
 ```
 
-#### Mock.Random.currencySymbol()
+#### Mockjs.Random.currencySymbol()
 
 货币符号
 
 ```text
-Mock.Random.currencySymbol(); // => ៛
+Mockjs.Random.currencySymbol(); // => ៛
 ```
 
-#### Mock.Random.unifiedIdentifier()
+#### Mockjs.Random.unifiedIdentifier()
 
 > 非真实信息，仅供测试使用，请勿用于非法用途。
 
 统一社会信用代码
 
 ```text
-Mock.Random.unifiedIdentifier(); // => 35210703CDMKJ424LA
+Mockjs.Random.unifiedIdentifier(); // => 35210703CDMKJ424LA
 ```

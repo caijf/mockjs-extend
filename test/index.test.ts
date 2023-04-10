@@ -1,22 +1,22 @@
-import Mock from '../src';
+import { Mockjs } from '../src';
 
 describe('mockjs-extend', () => {
   it('bank', () => {
-    const bankCardNo = Mock.Random.bankCardNo();
-    const bankCardNoMask = Mock.Random.bankCardNo(true);
-    const bankCardNoFormat = Mock.Random.bankCardNo(false, true);
-    const bankCardBin = Mock.Random.bankCardBin();
-    const swiftCode = Mock.Random.swiftCode();
-    const bankBranchCode = Mock.Random.bankBranchCode();
-    const bankCode = Mock.Random.bankCode();
-    const bank = Mock.Random.bank();
-    const bankName = Mock.Random.bankName();
-    const cardType = Mock.Random.cardType();
-    const cardTypeName = Mock.Random.cardTypeName();
-    const globalBankName = Mock.Random.globalBankName();
-    const cglobalBankName = Mock.Random.cglobalBankName();
+    const bankCardNo = Mockjs.Random.bankCardNo();
+    const bankCardNoMask = Mockjs.Random.bankCardNo(true);
+    const bankCardNoFormat = Mockjs.Random.bankCardNo(false, true);
+    const bankCardBin = Mockjs.Random.bankCardBin();
+    const swiftCode = Mockjs.Random.swiftCode();
+    const bankBranchCode = Mockjs.Random.bankBranchCode();
+    const bankCode = Mockjs.Random.bankCode();
+    const bank = Mockjs.Random.bank();
+    const bankName = Mockjs.Random.bankName();
+    const cardType = Mockjs.Random.cardType();
+    const cardTypeName = Mockjs.Random.cardTypeName();
+    const globalBankName = Mockjs.Random.globalBankName();
+    const cglobalBankName = Mockjs.Random.cglobalBankName();
 
-    // console.log(Mock.mock({
+    // console.log(Mockjs.mock({
     //   data: {
     //     cardNo: '@bankCardNo(false, true)'
     //   }
@@ -50,16 +50,16 @@ describe('mockjs-extend', () => {
   });
 
   it('other', () => {
-    const tel = Mock.Random.tel();
-    const phone = Mock.Random.phone();
-    const mobile = Mock.Random.mobile();
-    const country = Mock.Random.country();
-    const countryName = Mock.Random.countryName();
-    const countryCode = Mock.Random.countryCode();
-    const currency = Mock.Random.currency();
-    const currencyName = Mock.Random.currencyName();
-    const currencySymbol = Mock.Random.currencySymbol();
-    const unifiedIdentifier = Mock.Random.unifiedIdentifier();
+    const tel = Mockjs.Random.tel();
+    const phone = Mockjs.Random.phone();
+    const mobile = Mockjs.Random.mobile();
+    const country = Mockjs.Random.country();
+    const countryName = Mockjs.Random.countryName();
+    const countryCode = Mockjs.Random.countryCode();
+    const currency = Mockjs.Random.currency();
+    const currencyName = Mockjs.Random.currencyName();
+    const currencySymbol = Mockjs.Random.currencySymbol();
+    const unifiedIdentifier = Mockjs.Random.unifiedIdentifier();
 
     console.log('tel:', tel);
     console.log('phone:', phone);
