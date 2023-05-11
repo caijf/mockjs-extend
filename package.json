@@ -6,9 +6,10 @@
   "scripts": {
     "test": "jest --verbose",
     "build": "npm run build:cjs && npm run build:es",
-    "build:cjs": "rm -rf ./cjs && tsc --outDir cjs -t es3 -m commonjs",
-    "build:es": "rm -rf ./es && tsc --outDir es -t es3 -m esnext",
-    "prepublishOnly": "npm test && npm run build"
+    "build:cjs": "rm -rf ./cjs && tsc -p tsconfig.build.json --outDir cjs -m commonjs",
+    "build:es": "rm -rf ./es && tsc -p tsconfig.build.json --outDir es -m esnext",
+    "prepublishOnly": "npm test && npm run build",
+    "tsc": "tsc --noEmit"
   },
   "files": [
     "cjs",
@@ -18,21 +19,18 @@
   "author": "caijf <369756941@qq.com>",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.18.2",
-    "@babel/preset-env": "^7.18.2",
-    "@babel/preset-typescript": "^7.17.12",
-    "@types/jest": "^28.1.1",
-    "@types/mockjs": "^1.0.6",
-    "@types/node": "^17.0.41",
-    "babel-jest": "^28.1.1",
-    "jest": "^28.1.1",
-    "typescript": "^4.7.3"
+    "@types/jest": "^29.5.1",
+    "@types/mockjs": "^1.0.7",
+    "@types/node": "^20.1.2",
+    "ts-jest": "^29.1.0",
+    "jest": "^29.5.0",
+    "typescript": "^5.0.4"
   },
   "dependencies": {
-    "bankcard": "^3.0.2",
+    "bankcard": "^3.0.5",
     "intl-tel-code": "^1.0.0",
-    "lcn": "^4.1.0",
+    "lcn": "^5.0.3",
     "mockjs": "^1.1.0",
-    "util-helpers": "^4.10.0"
+    "util-helpers": "^4.17.3"
   }
 }
