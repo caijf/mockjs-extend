@@ -1,5 +1,7 @@
 # mockjs-extend
 
+[![npm][npm]][npm-url] ![GitHub](https://img.shields.io/github/license/caijf/mockjs-extend.svg)
+
 基于 [mockjs](https://github.com/nuysoft/Mock/wiki) 扩展生成随机数据
 
 ## 使用
@@ -229,3 +231,6 @@ Mockjs.Random.currencySymbol(); // => ៛
 ```text
 Mockjs.Random.unifiedIdentifier(); // => 35210703CDMKJ424LA
 ```
+
+[npm]: https://img.shields.io/npm/v/mockjs-extend.svg
+[npm-url]: https://npmjs.com/package/mockjs-extend
