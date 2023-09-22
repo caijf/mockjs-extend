@@ -4,6 +4,7 @@
 node_modules
 yarn.lock
 package-lock.json
+pnpm-lock.yaml
 
 # testing
 coverage
@@ -14,6 +15,7 @@ zip
 dist
 es
 cjs
+types
 
 # logs
 *.log

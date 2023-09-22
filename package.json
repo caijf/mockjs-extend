@@ -5,15 +5,17 @@
   "module": "es/index.js",
   "scripts": {
     "test": "jest --verbose",
-    "build": "npm run build:cjs && npm run build:es",
+    "build": "npm run build:cjs && npm run build:es && npm run build:types",
     "build:cjs": "rm -rf ./cjs && tsc -p tsconfig.build.json --outDir cjs -m commonjs",
     "build:es": "rm -rf ./es && tsc -p tsconfig.build.json --outDir es -m esnext",
+    "build:types": "rm -rf ./types && tsc -p tsconfig.build.json --outDir types -d --emitDeclarationOnly",
     "prepublishOnly": "npm test && npm run build",
     "tsc": "tsc --noEmit"
   },
   "files": [
     "cjs",
-    "es"
+    "es",
+    "types"
   ],
   "repository": "git@github.com:caijf/mockjs-extend.git",
   "author": "caijf <369756941@qq.com>",
