@@ -8,14 +8,16 @@
 
 ### 安装
 
-```bash
+```shell
 npm install mockjs-extend --save-dev
 ```
 
-或
+```shell
+yarn add mockjs-extend -D
+```
 
-```bash
-yarn add mockjs-extend --dev
+```shell
+pnpm add mockjs-extend -D
 ```
 
 ### 示例
@@ -30,15 +32,30 @@ export default {
     errMsg: 'mock success',
     'data|2-10': [
       {
-        bankName: '@bankName', // 银行名称
         bankCode: '@bankCode', // 银行编码
-        cardNo: '@bankCardNo', // 银行卡号
-        cardNoMask: '@bankCardNo(true)', // 银行卡号脱敏
+        bankName: '@bankName', // 银行名称
+        cardNo1: '@bankCardNo', // 银行卡号
+        cardNo2: '@bankCardNo(true)', // 银行卡号脱敏
+        cardNo3: '@bankCardNo(false, true)', // 银行卡号格式化
+        bankCardBin: '@bankCardBin', // 银行卡 bin
+        swiftCode: '@swiftCode', // SWIFT CODE
+        bankBranchCode: '@bankBranchCode', // 分行代码
+        cardType: '@cardType', // 银行卡类型
+        cardTypeName: '@cardTypeName', // 银行卡类型名称
+        globalBankName: '@globalBankName', // 英文国际银行名称
+        cglobalBankName: '@cglobalBankName', // 中文国际银行名称
+
         phone: '@phone', // 手机号码
-        country: '@country', // 国家
-        currency: '@currency', // 货币
-        currencyName: '@currencyName', // 货币名称
+        mobile: '@mobile', // 手机号码，同 phone
+        tel: '@tel', // 电话号码
+        country: '@country', // 国家英文名称
+        countryName: '@countryName', // 国家中文名称
+        countryCode1: '@countryCode', // 国家三字码
+        countryCode2: '@countryCode(2)', // 国家二字码
+        currency: '@currency', // 货币英文缩写
+        currencyName: '@currencyName', // 货币中文名称
         currencySymbol: '@currencySymbol', // 货币符号
+        unifiedIdentifier: '@unifiedIdentifier', // 统一社会信用代码
       },
     ],
   }),
@@ -200,7 +217,7 @@ Mockjs.Random.countryCode(2); // => TR
 
 #### Mockjs.Random.currency()
 
-货币
+货币英文缩写
 
 ```text
 Mockjs.Random.currency(); // => NZD
