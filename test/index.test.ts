@@ -24,6 +24,7 @@ describe('mockjs-extend', () => {
 
     console.log('bankCardNo:', bankCardNo);
     console.log('bankCardNoMask:', bankCardNoMask);
+    console.log('bankCardNoMask:', bankCardNoFormat);
     console.log('bankCardBin:', bankCardBin);
     console.log('swiftCode:', swiftCode);
     console.log('bankBranchCode:', bankBranchCode);
@@ -37,6 +38,7 @@ describe('mockjs-extend', () => {
 
     expect(bankCardNo).toBeTruthy();
     expect(bankCardNoMask).toBeTruthy();
+    expect(bankCardNoFormat).toBeTruthy();
     expect(bankCardBin).toBeTruthy();
     expect(swiftCode).toBeTruthy();
     expect(bankBranchCode).toBeTruthy();

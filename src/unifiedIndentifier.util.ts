@@ -27,21 +27,21 @@ export const organization = [
     children: [
       {
         label: '机关',
-        value: '1',
+        value: '1'
       },
       {
         label: '事业单位',
-        value: '2',
+        value: '2'
       },
       {
         label: '编办直接管理机构编制的群众团体',
-        value: '3',
+        value: '3'
       },
       {
         label: '其他',
-        value: '9',
-      },
-    ],
+        value: '9'
+      }
+    ]
   },
   {
     label: '外交',
@@ -49,13 +49,13 @@ export const organization = [
     children: [
       {
         label: '外国常驻新闻机构',
-        value: '1',
+        value: '1'
       },
       {
         label: '其他',
-        value: '9',
-      },
-    ],
+        value: '9'
+      }
+    ]
   },
   {
     label: '司法行政',
@@ -63,29 +63,29 @@ export const organization = [
     children: [
       {
         label: '律师执业机构',
-        value: '1',
+        value: '1'
       },
       {
         label: '公证处',
-        value: '2',
+        value: '2'
       },
       {
         label: '基层法律服务所',
-        value: '3',
+        value: '3'
       },
       {
         label: '司法鉴定机构',
-        value: '4',
+        value: '4'
       },
       {
         label: '仲裁委员会',
-        value: '5',
+        value: '5'
       },
       {
         label: '其他',
-        value: '9',
-      },
-    ],
+        value: '9'
+      }
+    ]
   },
   {
     label: '文化',
@@ -93,13 +93,13 @@ export const organization = [
     children: [
       {
         label: '外国在华文化中心',
-        value: '1',
+        value: '1'
       },
       {
         label: '其他',
-        value: '9',
-      },
-    ],
+        value: '9'
+      }
+    ]
   },
   {
     label: '民政',
@@ -107,21 +107,21 @@ export const organization = [
     children: [
       {
         label: '社会团体',
-        value: '1',
+        value: '1'
       },
       {
         label: '民办非企业单位',
-        value: '2',
+        value: '2'
       },
       {
         label: '基金会',
-        value: '3',
+        value: '3'
       },
       {
         label: '其他',
-        value: '9',
-      },
-    ],
+        value: '9'
+      }
+    ]
   },
   {
     label: '旅游',
@@ -129,17 +129,17 @@ export const organization = [
     children: [
       {
         label: '外国旅游部门常驻代表机构',
-        value: '1',
+        value: '1'
       },
       {
         label: '港澳台地区旅游部门常驻内地（大陆）代表机构',
-        value: '2',
+        value: '2'
       },
       {
         label: '其他',
-        value: '9',
-      },
-    ],
+        value: '9'
+      }
+    ]
   },
   {
     label: '宗教',
@@ -147,17 +147,17 @@ export const organization = [
     children: [
       {
         label: '宗教活动场所',
-        value: '1',
+        value: '1'
       },
       {
         label: '宗教院校',
-        value: '2',
+        value: '2'
       },
       {
         label: '其他',
-        value: '9',
-      },
-    ],
+        value: '9'
+      }
+    ]
   },
   {
     label: '工会',
@@ -165,13 +165,13 @@ export const organization = [
     children: [
       {
         label: '基层工会',
-        value: '1',
+        value: '1'
       },
       {
         label: '其他',
-        value: '9',
-      },
-    ],
+        value: '9'
+      }
+    ]
   },
   {
     label: '工商',
@@ -179,17 +179,17 @@ export const organization = [
     children: [
       {
         label: '企业',
-        value: '1',
+        value: '1'
       },
       {
         label: '个体工商户',
-        value: '2',
+        value: '2'
       },
       {
         label: '农民专业合作社',
-        value: '3',
-      },
-    ],
+        value: '3'
+      }
+    ]
   },
   {
     label: '中央军委改革和编制办公室',
@@ -197,13 +197,13 @@ export const organization = [
     children: [
       {
         label: '军队事业单位',
-        value: '1',
+        value: '1'
       },
       {
         label: '其他',
-        value: '9',
-      },
-    ],
+        value: '9'
+      }
+    ]
   },
   {
     label: '农业',
@@ -211,21 +211,21 @@ export const organization = [
     children: [
       {
         label: '组级集体经济组织',
-        value: '1',
+        value: '1'
       },
       {
         label: '村级集体经济组织',
-        value: '2',
+        value: '2'
       },
       {
         label: '乡镇级集体经济组织',
-        value: '3',
+        value: '3'
       },
       {
         label: '其他',
-        value: '9',
-      },
-    ],
+        value: '9'
+      }
+    ]
   },
   {
     label: '其他',
@@ -233,10 +233,10 @@ export const organization = [
     children: [
       {
         label: '其他',
-        value: '1',
-      },
-    ],
-  },
+        value: '1'
+      }
+    ]
+  }
 ];
 
 export function getBodyIdentifier() {
@@ -257,9 +257,9 @@ export function isBodyIdentifier(value: string) {
 export function normalizeBodyIdentifier(value: string) {
   return value
     ? value
-      .toUpperCase()
-      .replace(/[^\dA-HJ-NPQRTUWXY]/g, '')
-      .substring(0, 9)
+        .toUpperCase()
+        .replace(/[^\dA-HJ-NPQRTUWXY]/g, '')
+        .substring(0, 9)
     : value;
 }
 
@@ -293,7 +293,7 @@ function sumCheckCode(preCode: string) {
 export function createSocialCreditCode(
   orgCode?: string,
   areaCode?: string,
-  bodyIdentifier?: string,
+  bodyIdentifier?: string
 ) {
   const realOrgCode = orgCode || getRandomOrg().join('');
   const realAreaCode = areaCode || getRandomCityAndAreaCode();

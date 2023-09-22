@@ -1,5 +1,5 @@
 // 银行
-import Mock from "mockjs";
+import Mock from 'mockjs';
 import { formatBankCard, randomString, replaceChar } from 'util-helpers';
 import { cards } from 'bankcard';
 import globalBank from './bank_global_dict';

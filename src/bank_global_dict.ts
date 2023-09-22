@@ -212,7 +212,7 @@ const GLOBAL_BANK_DICT = [
   {
     cn: '西太平洋银行公司',
     en: 'Westpac Banking Corp.'
-  },
+  }
 ];
 
 export default GLOBAL_BANK_DICT;

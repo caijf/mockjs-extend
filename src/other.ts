@@ -41,7 +41,7 @@ const currencies = [
   { code: 'CNY', desc: '人民币元', symbol: '¥', flagId: 'cn' },
   { code: 'CHF', desc: '瑞士法郎', symbol: 'Fr', flagId: 'bl' },
   { code: 'CAD', desc: '加拿大元', symbol: '$', flagId: 'ca' },
-  { code: 'AUD', desc: '澳大利亚元', symbol: '$', flagId: 'au' },
+  { code: 'AUD', desc: '澳大利亚元', symbol: '$', flagId: 'au' }
 ];
 
 Mock.Random.extend({
@@ -52,7 +52,7 @@ Mock.Random.extend({
 
   // 手机号码
   phone() {
-    return `1${Mock.mock(/[3-9]/)}${Mock.mock(/\d{9}/)}`
+    return `1${Mock.mock(/[3-9]/)}${Mock.mock(/\d{9}/)}`;
   },
   // 手机号码别名
   mobile() {
@@ -81,7 +81,7 @@ Mock.Random.extend({
 
   // 国家二/三字码
   countryCode(len = 3) {
-    let fieldName = len === 2 ? 'alpha2' : 'alpha3';
+    const fieldName = len === 2 ? 'alpha2' : 'alpha3';
     return this.pick(countries)[fieldName];
   },
 
@@ -113,6 +113,5 @@ Mock.Random.extend({
   // 公司中文名称
   companyName() {
     return this.province() + this.ctitle() + '有限公司';
-  },
+  }
 });
-
