@@ -48,6 +48,8 @@ export default {
         phone: '@phone', // 手机号码
         mobile: '@mobile', // 手机号码，同 phone
         tel: '@tel', // 电话号码
+        age: '@age', // 年龄
+        money: '@money', // 金额
         country: '@country', // 国家英文名称
         countryName: '@countryName', // 国家中文名称
         countryCode1: '@countryCode', // 国家三字码
@@ -56,6 +58,8 @@ export default {
         currencyName: '@currencyName', // 货币中文名称
         currencySymbol: '@currencySymbol', // 货币符号
         unifiedIdentifier: '@unifiedIdentifier', // 统一社会信用代码
+        company: '@company', // 公司英文名称
+        companyName: '@companyName', // 公司中文名称
       },
     ],
   }),
@@ -186,6 +190,28 @@ Mockjs.Random.phone(); // => 17837351484
 Mockjs.Random.mobile(); // => 14561418878
 ```
 
+#### Mockjs.Random.age(min=0, max=100)
+
+年龄
+
+```text
+Mockjs.Random.age(); // => 18
+```
+
+#### Mockjs.Random.money(precision=2, min=0, max=10000)
+
+金额，默认 2 位小数点
+
+```text
+Mockjs.Random.money(); // => 128.41
+
+// 不要小数点
+Mockjs.Random.money(0); // => 326
+
+// 自定义最大最小值
+Mockjs.Random.money(2, 100, 1000); // => 843
+```
+
 #### Mockjs.Random.country()
 
 国家英文名称
@@ -247,6 +273,26 @@ Mockjs.Random.currencySymbol(); // => ៛
 
 ```text
 Mockjs.Random.unifiedIdentifier(); // => 35210703CDMKJ424LA
+```
+
+#### Mockjs.Random.company()
+
+> 非真实信息，仅供测试使用，请勿用于非法用途。
+
+公司英文名称
+
+```text
+Mockjs.Random.company(); // => Bxdmj Peurpx Aumozuufp Jpgmyky Gavxpt Wfds Co.,Ltd.
+```
+
+#### Mockjs.Random.companyName()
+
+> 非真实信息，仅供测试使用，请勿用于非法用途。
+
+公司中文名称
+
+```text
+Mockjs.Random.company(); // => 云南省世把书质派保有限公司
 ```
 
 [npm]: https://img.shields.io/npm/v/mockjs-extend.svg

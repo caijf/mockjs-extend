@@ -60,6 +60,10 @@ describe('mockjs-extend', () => {
     const currencyName = Mockjs.Random.currencyName();
     const currencySymbol = Mockjs.Random.currencySymbol();
     const unifiedIdentifier = Mockjs.Random.unifiedIdentifier();
+    const company = Mockjs.Random.company();
+    const companyName = Mockjs.Random.companyName();
+    const age = Mockjs.Random.age();
+    const money = Mockjs.Random.money();
 
     console.log('tel:', tel);
     console.log('phone:', phone);
@@ -71,6 +75,10 @@ describe('mockjs-extend', () => {
     console.log('currencyName:', currencyName);
     console.log('currencySymbol:', currencySymbol);
     console.log('unifiedIdentifier:', unifiedIdentifier);
+    console.log('company: ', company);
+    console.log('companyName: ', companyName);
+    console.log('age: ', age);
+    console.log('money: ', money);
 
     expect(tel).toBeTruthy();
     expect(phone).toBeTruthy();

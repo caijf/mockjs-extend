@@ -59,6 +59,16 @@ Mock.Random.extend({
     return this.phone();
   },
 
+  // 年龄
+  age(min = 0, max = 100) {
+    return this.natural(min, max);
+  },
+
+  // 金额
+  money(precision = 2, min = 0, max = 10000) {
+    return this.float(min, max, precision, precision);
+  },
+
   // 国家英文名称
   country() {
     return this.pick(countries).en;
@@ -93,6 +103,16 @@ Mock.Random.extend({
   // 统一社会信用代码
   unifiedIdentifier() {
     return createSocialCreditCode();
-  }
+  },
+
+  // 公司英文名称
+  company() {
+    return this.title() + ' Co.,Ltd.';
+  },
+
+  // 公司中文名称
+  companyName() {
+    return this.province() + this.ctitle() + '有限公司';
+  },
 });
 
