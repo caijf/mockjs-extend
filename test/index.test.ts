@@ -66,6 +66,7 @@ describe('mockjs-extend', () => {
     const companyName = Mockjs.Random.companyName();
     const age = Mockjs.Random.age();
     const money = Mockjs.Random.money();
+    const rate = Mockjs.Random.rate();
 
     console.log('tel:', tel);
     console.log('phone:', phone);
@@ -81,6 +82,7 @@ describe('mockjs-extend', () => {
     console.log('companyName: ', companyName);
     console.log('age: ', age);
     console.log('money: ', money);
+    console.log('rate: ', rate);
 
     expect(tel).toBeTruthy();
     expect(phone).toBeTruthy();
@@ -92,5 +94,10 @@ describe('mockjs-extend', () => {
     expect(currencyName).toBeTruthy();
     expect(currencySymbol).toBeTruthy();
     expect(unifiedIdentifier).toBeTruthy();
+    expect(company).toBeTruthy();
+    expect(companyName).toBeTruthy();
+    expect(age).toBeTruthy();
+    expect(money).toBeTruthy();
+    expect(rate).toBeTruthy();
   });
 });

@@ -69,6 +69,11 @@ Mock.Random.extend({
     return this.float(min, max, precision, precision);
   },
 
+  // 费率
+  rate(precision = 2, min = 0, max = 1) {
+    return this.money(precision, min, max);
+  },
+
   // 国家英文名称
   country() {
     return this.pick(countries).en;

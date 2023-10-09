@@ -50,6 +50,7 @@ export default {
         tel: '@tel', // 电话号码
         age: '@age', // 年龄
         money: '@money', // 金额
+        rate: '@rate', // 费率
         country: '@country', // 国家英文名称
         countryName: '@countryName', // 国家中文名称
         countryCode1: '@countryCode', // 国家三字码
@@ -59,10 +60,10 @@ export default {
         currencySymbol: '@currencySymbol', // 货币符号
         unifiedIdentifier: '@unifiedIdentifier', // 统一社会信用代码
         company: '@company', // 公司英文名称
-        companyName: '@companyName', // 公司中文名称
-      },
-    ],
-  }),
+        companyName: '@companyName' // 公司中文名称
+      }
+    ]
+  })
 };
 ```
 
@@ -210,6 +211,20 @@ Mockjs.Random.money(0); // => 326
 
 // 自定义最大最小值
 Mockjs.Random.money(2, 100, 1000); // => 843
+```
+
+#### Mockjs.Random.rate(precision=2, min=0, max=1)
+
+费率，默认 2 位小数点
+
+```text
+Mockjs.Random.rate(); // => 0.41
+
+// 4位小数点
+Mockjs.Random.rate(4); // => 0.1326
+
+// 自定义最大最小值
+Mockjs.Random.rate(2, 0, 5); // => 1.83
 ```
 
 #### Mockjs.Random.country()
