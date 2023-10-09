@@ -1,8 +1,8 @@
 # mockjs-extend
 
-[![npm][npm]][npm-url] ![GitHub](https://img.shields.io/github/license/caijf/mockjs-extend.svg)
-
 基于 [mockjs](https://github.com/nuysoft/Mock/wiki) 扩展生成随机数据
+
+[![npm][npm]][npm-url] ![GitHub](https://img.shields.io/github/license/caijf/mockjs-extend.svg)
 
 ## 使用
 
