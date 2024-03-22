@@ -66,7 +66,7 @@ Mock.Random.extend({
 
   // 金额
   money(precision = 2, min = 0, max = 10000) {
-    return this.float(min, max, precision, precision);
+    return this.float(min, Math.max(max - 1, min), precision, precision);
   },
 
   // 费率

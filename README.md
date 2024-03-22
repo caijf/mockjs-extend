@@ -95,11 +95,11 @@ Mockjs.Random.bankName(); // => 乌海银行
 
 银行卡号
 
-**mask**
+- **mask**
 
 脱敏。可选。
 
-**format**
+- **format**
 
 格式化。可选。
 
@@ -247,7 +247,7 @@ Mockjs.Random.countryName(); // => 土耳其
 
 国家二/三字码
 
-**len**
+- **len**
 
 默认为 3 ，可选。2-二字码 3-三字码
 
