@@ -141,5 +141,9 @@ Mock.Random.extend({
   // ICP备案号
   icpNo() {
     return randomString(1, provinceShortNames) + 'ICP备' + this.natural(10000000, 99999999) + '号';
+  },
+  // alias icpNo
+  icp() {
+    return randomString(1, provinceShortNames) + 'ICP备' + this.natural(10000000, 99999999) + '号';
   }
 });

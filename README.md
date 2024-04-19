@@ -47,8 +47,7 @@ export default {
 
         nid: '@nid', // 指定长度的随机数字字符串
         sid: '@sid', // 指定长度的随机字符字符串
-        phone: '@phone', // 手机号码
-        mobile: '@mobile', // 手机号码，同 phone
+        mobile: '@mobile', // 手机号码
         tel: '@tel', // 电话号码
         age: '@age', // 年龄
         money: '@money', // 金额
@@ -63,7 +62,7 @@ export default {
         uid: '@uid', // 统一社会信用代码
         company: '@company', // 公司英文名称
         companyName: '@companyName' // 公司中文名称
-        icpNo: '@icpNo' // ICP备案号
+        icp: '@icp' // ICP备案号
       }
     ]
   })
@@ -331,14 +330,14 @@ Mockjs.Random.company(); // => Bxdmj Peurpx Aumozuufp Jpgmyky Gavxpt Wfds Co.,Lt
 Mockjs.Random.company(); // => 云南省世把书质派保有限公司
 ```
 
-#### Mockjs.Random.icpNo()
+#### Mockjs.Random.icp()
 
 > ⚠️非真实信息，仅供测试使用，请勿用于非法用途。
 
 ICP备案号
 
 ```text
-Mockjs.Random.icpNo(); // => 陕ICP备69861741号
+Mockjs.Random.icp(); // => 陕ICP备69861741号
 ```
 
 [npm]: https://img.shields.io/npm/v/mockjs-extend.svg

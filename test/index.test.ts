@@ -73,6 +73,7 @@ describe('mockjs-extend', () => {
     const money = Mockjs.Random.money();
     const rate = Mockjs.Random.rate();
     const icpNo = Mockjs.Random.icpNo();
+    const icp = Mockjs.Random.icp();
 
     console.log('nid:', nid);
     console.log('nid2:', nid2);
@@ -95,6 +96,7 @@ describe('mockjs-extend', () => {
     console.log('money: ', money);
     console.log('rate: ', rate);
     console.log('icpNo: ', icpNo);
+    console.log('icp: ', icp);
 
     expect(nid).toBeTruthy();
     expect(nid2).toBeTruthy();
@@ -117,5 +119,6 @@ describe('mockjs-extend', () => {
     expect(money).toBeTruthy();
     expect(rate).toBeTruthy();
     expect(icpNo).toBeTruthy();
+    expect(icp).toBeTruthy();
   });
 });
