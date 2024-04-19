@@ -45,6 +45,8 @@ export default {
         globalBankName: '@globalBankName', // 英文国际银行名称
         cglobalBankName: '@cglobalBankName', // 中文国际银行名称
 
+        nid: '@nid', // 指定长度的随机数字字符串
+        sid: '@sid', // 指定长度的随机字符字符串
         phone: '@phone', // 手机号码
         mobile: '@mobile', // 手机号码，同 phone
         tel: '@tel', // 电话号码
@@ -58,9 +60,10 @@ export default {
         currency: '@currency', // 货币英文缩写
         currencyName: '@currencyName', // 货币中文名称
         currencySymbol: '@currencySymbol', // 货币符号
-        unifiedIdentifier: '@unifiedIdentifier', // 统一社会信用代码
+        uid: '@uid', // 统一社会信用代码
         company: '@company', // 公司英文名称
         companyName: '@companyName' // 公司中文名称
+        icpNo: '@icpNo' // ICP备案号
       }
     ]
   })
@@ -166,6 +169,24 @@ Mockjs.Random.cglobalBankName(); // => 大通曼哈顿银行
 ```
 
 ### 其他
+
+#### Mockjs.Random.nid(len=8)
+
+指定长度的随机数字字符串
+
+```text
+Mockjs.Random.nid(); // => 29573221
+Mockjs.Random.nid(5); // => 07174
+```
+
+#### Mockjs.Random.sid(len=8)
+
+指定长度的随机字符字符串
+
+```text
+Mockjs.Random.sid(); // => s8ZHTdHr
+Mockjs.Random.sid(5); // => kYOiT
+```
 
 #### Mockjs.Random.tel()
 
@@ -280,19 +301,19 @@ Mockjs.Random.currencyName(); // => 柬埔寨瑞尔
 Mockjs.Random.currencySymbol(); // => ៛
 ```
 
-#### Mockjs.Random.unifiedIdentifier()
+#### Mockjs.Random.unifiedId()
 
-> 非真实信息，仅供测试使用，请勿用于非法用途。
+> ⚠️非真实信息，仅供测试使用，请勿用于非法用途。
 
 统一社会信用代码
 
 ```text
-Mockjs.Random.unifiedIdentifier(); // => 35210703CDMKJ424LA
+Mockjs.Random.unifiedId(); // => 35210703CDMKJ424LA
 ```
 
 #### Mockjs.Random.company()
 
-> 非真实信息，仅供测试使用，请勿用于非法用途。
+> ⚠️非真实信息，仅供测试使用，请勿用于非法用途。
 
 公司英文名称
 
@@ -302,12 +323,22 @@ Mockjs.Random.company(); // => Bxdmj Peurpx Aumozuufp Jpgmyky Gavxpt Wfds Co.,Lt
 
 #### Mockjs.Random.companyName()
 
-> 非真实信息，仅供测试使用，请勿用于非法用途。
+> ⚠️非真实信息，仅供测试使用，请勿用于非法用途。
 
 公司中文名称
 
 ```text
 Mockjs.Random.company(); // => 云南省世把书质派保有限公司
+```
+
+#### Mockjs.Random.icpNo()
+
+> ⚠️非真实信息，仅供测试使用，请勿用于非法用途。
+
+ICP备案号
+
+```text
+Mockjs.Random.icpNo(); // => 陕ICP备69861741号
 ```
 
 [npm]: https://img.shields.io/npm/v/mockjs-extend.svg

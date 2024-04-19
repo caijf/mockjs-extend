@@ -52,6 +52,10 @@ describe('mockjs-extend', () => {
   });
 
   it('other', () => {
+    const nid = Mockjs.Random.nid();
+    const nid2 = Mockjs.Random.nid(5);
+    const sid = Mockjs.Random.sid();
+    const sid2 = Mockjs.Random.sid(5);
     const tel = Mockjs.Random.tel();
     const phone = Mockjs.Random.phone();
     const mobile = Mockjs.Random.mobile();
@@ -62,12 +66,18 @@ describe('mockjs-extend', () => {
     const currencyName = Mockjs.Random.currencyName();
     const currencySymbol = Mockjs.Random.currencySymbol();
     const unifiedIdentifier = Mockjs.Random.unifiedIdentifier();
+    const uid = Mockjs.Random.uid();
     const company = Mockjs.Random.company();
     const companyName = Mockjs.Random.companyName();
     const age = Mockjs.Random.age();
     const money = Mockjs.Random.money();
     const rate = Mockjs.Random.rate();
+    const icpNo = Mockjs.Random.icpNo();
 
+    console.log('nid:', nid);
+    console.log('nid2:', nid2);
+    console.log('sid:', sid);
+    console.log('sid2:', sid2);
     console.log('tel:', tel);
     console.log('phone:', phone);
     console.log('mobile:', mobile);
@@ -78,12 +88,18 @@ describe('mockjs-extend', () => {
     console.log('currencyName:', currencyName);
     console.log('currencySymbol:', currencySymbol);
     console.log('unifiedIdentifier:', unifiedIdentifier);
+    console.log('uid:', uid);
     console.log('company: ', company);
     console.log('companyName: ', companyName);
     console.log('age: ', age);
     console.log('money: ', money);
     console.log('rate: ', rate);
+    console.log('icpNo: ', icpNo);
 
+    expect(nid).toBeTruthy();
+    expect(nid2).toBeTruthy();
+    expect(sid).toBeTruthy();
+    expect(sid2).toBeTruthy();
     expect(tel).toBeTruthy();
     expect(phone).toBeTruthy();
     expect(mobile).toBeTruthy();
@@ -94,10 +110,12 @@ describe('mockjs-extend', () => {
     expect(currencyName).toBeTruthy();
     expect(currencySymbol).toBeTruthy();
     expect(unifiedIdentifier).toBeTruthy();
+    expect(uid).toBeTruthy();
     expect(company).toBeTruthy();
     expect(companyName).toBeTruthy();
     expect(age).toBeTruthy();
     expect(money).toBeTruthy();
     expect(rate).toBeTruthy();
+    expect(icpNo).toBeTruthy();
   });
 });

@@ -1,4 +1,5 @@
 import Mock from 'mockjs';
+import { randomString } from 'util-helpers';
 import { createSocialCreditCode } from './unifiedIndentifier.util';
 
 // ref: https://www.npmjs.com/package/country-code
@@ -44,7 +45,20 @@ const currencies = [
   { code: 'AUD', desc: '澳大利亚元', symbol: '$', flagId: 'au' }
 ];
 
+const provinceShortNames = '京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼';
+
 Mock.Random.extend({
+  // 随机数字id
+  nid(len = 8) {
+    const reg = new RegExp(`\\d{${len}}`);
+    return Mock.mock(reg);
+  },
+
+  // 随机字符串id
+  sid(len = 8) {
+    return randomString(len);
+  },
+
   // 电话号码
   tel() {
     return Mock.mock(/\d{8}/);
@@ -109,6 +123,10 @@ Mock.Random.extend({
   unifiedIdentifier() {
     return createSocialCreditCode();
   },
+  // alias unifiedIdentifier
+  uid() {
+    return createSocialCreditCode();
+  },
 
   // 公司英文名称
   company() {
@@ -118,5 +136,10 @@ Mock.Random.extend({
   // 公司中文名称
   companyName() {
     return this.province() + this.ctitle() + '有限公司';
+  },
+
+  // ICP备案号
+  icpNo() {
+    return randomString(1, provinceShortNames) + 'ICP备' + this.natural(10000000, 99999999) + '号';
   }
 });
