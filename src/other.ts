@@ -61,12 +61,12 @@ Mock.Random.extend({
 
   // 电话号码
   tel() {
-    return Mock.mock(/\d{8}/);
+    return '2203' + this.nid(4);
   },
 
   // 手机号码
   phone() {
-    return `1${Mock.mock(/[3-9]/)}${Mock.mock(/\d{9}/)}`;
+    return `1${Mock.mock(/[3-9]/)}${this.nid(9)}`;
   },
   // 手机号码别名
   mobile() {
@@ -125,7 +125,7 @@ Mock.Random.extend({
   },
   // alias unifiedIdentifier
   uid() {
-    return createSocialCreditCode();
+    return this.unifiedIdentifier();
   },
 
   // 公司英文名称
@@ -140,10 +140,10 @@ Mock.Random.extend({
 
   // ICP备案号
   icpNo() {
-    return randomString(1, provinceShortNames) + 'ICP备' + this.natural(10000000, 99999999) + '号';
+    return randomString(1, provinceShortNames) + 'ICP备' + this.nid() + '号';
   },
   // alias icpNo
   icp() {
-    return randomString(1, provinceShortNames) + 'ICP备' + this.natural(10000000, 99999999) + '号';
+    return this.icpNo();
   }
 });

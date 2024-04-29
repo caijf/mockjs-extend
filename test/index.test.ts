@@ -24,7 +24,7 @@ describe('mockjs-extend', () => {
 
     console.log('bankCardNo:', bankCardNo);
     console.log('bankCardNoMask:', bankCardNoMask);
-    console.log('bankCardNoMask:', bankCardNoFormat);
+    console.log('bankCardNoFormat:', bankCardNoFormat);
     console.log('bankCardBin:', bankCardBin);
     console.log('swiftCode:', swiftCode);
     console.log('bankBranchCode:', bankBranchCode);
