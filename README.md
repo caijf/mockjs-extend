@@ -300,14 +300,14 @@ Mockjs.Random.currencyName(); // => 柬埔寨瑞尔
 Mockjs.Random.currencySymbol(); // => ៛
 ```
 
-#### Mockjs.Random.unifiedId()
+#### Mockjs.Random.uid()
 
 > ⚠️非真实信息，仅供测试使用，请勿用于非法用途。
 
 统一社会信用代码
 
 ```text
-Mockjs.Random.unifiedId(); // => 35210703CDMKJ424LA
+Mockjs.Random.uid(); // => 35210703CDMKJ424LA
 ```
 
 #### Mockjs.Random.company()
