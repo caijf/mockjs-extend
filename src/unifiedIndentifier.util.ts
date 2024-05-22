@@ -1,5 +1,6 @@
 import { randomString } from 'util-helpers';
 import { data, isCityCode, isAreaCode } from 'lcn';
+import { randomInt } from 'ut2';
 
 const cities: typeof data = [];
 const areas: typeof data = [];
@@ -14,7 +15,7 @@ data.forEach((item) => {
 
 export const getRandomCityAndAreaCode = () => {
   const cityAndAreas = [...cities, ...areas];
-  return cityAndAreas[Math.floor(Math.random() * cityAndAreas.length)].code;
+  return cityAndAreas[randomInt(0, cityAndAreas.length - 1)].code;
 };
 
 export const basicCode = '0123456789ABCDEFGHJKLMNPQRTUWXY';

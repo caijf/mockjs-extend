@@ -52,6 +52,7 @@ export default {
         age: '@age', // 年龄
         money: '@money', // 金额
         rate: '@rate', // 费率
+        sn: '@sn', // 数字字符串
         country: '@country', // 国家英文名称
         countryName: '@countryName', // 国家中文名称
         countryCode1: '@countryCode', // 国家三字码
@@ -245,6 +246,20 @@ Mockjs.Random.rate(4); // => 0.1326
 
 // 自定义最大最小值
 Mockjs.Random.rate(2, 0, 5); // => 1.83
+```
+
+#### Mockjs.Random.sn(precision=2, min=0, max=1)
+
+数字字符串，默认 2 位小数点
+
+```text
+Mockjs.Random.sn(); // => "0.41"
+
+// 4位小数点
+Mockjs.Random.sn(4); // => "0.1326"
+
+// 自定义最大最小值
+Mockjs.Random.sn(2, 0, 5); // => "1.83"
 ```
 
 #### Mockjs.Random.country()

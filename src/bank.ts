@@ -3,6 +3,7 @@ import Mock from 'mockjs';
 import { formatBankCard, randomString, replaceChar } from 'util-helpers';
 import { cards } from 'bankcard';
 import globalBank from './bank_global_dict';
+import { randomInt } from 'crypto';
 
 function sumCheckCode(num: string | number) {
   const numArr = (num + '').replace(/\D/g, '').split('').reverse();
@@ -17,7 +18,7 @@ function sumCheckCode(num: string | number) {
 }
 
 function getRandomBankCard() {
-  return cards[Math.floor(Math.random() * cards.length)];
+  return cards[randomInt(0, cards.length - 1)];
 }
 
 function createBankCardNo() {

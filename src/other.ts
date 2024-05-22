@@ -88,6 +88,11 @@ Mock.Random.extend({
     return this.money(precision, min, max);
   },
 
+  // 数字字符串
+  sn(precision = 2, min = 0, max = 10000) {
+    return this.money(precision, min, max) + '';
+  },
+
   // 国家英文名称
   country() {
     return this.pick(countries).en;
