@@ -3,7 +3,7 @@ import Mock from 'mockjs';
 import { formatBankCard, randomString, replaceChar } from 'util-helpers';
 import { cards } from 'bankcard';
 import globalBank from './bank_global_dict';
-import { randomInt } from 'crypto';
+import { randomInt } from 'ut2';
 
 function sumCheckCode(num: string | number) {
   const numArr = (num + '').replace(/\D/g, '').split('').reverse();
