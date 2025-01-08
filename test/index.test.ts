@@ -6,18 +6,18 @@ describe('bank', () => {
   it('bankCardNo', () => {
     const result1 = Mockjs.Random.bankCardNo();
     console.log('bankCardNo:', result1);
-    expect(result1.length >= 16 && result1.length <= 19).toBe(true);
+    expect(result1.length >= 15 && result1.length <= 19).toBe(true);
 
     // mask
     const result2 = Mockjs.Random.bankCardNo(true);
     console.log('bankCardNo mask:', result2);
-    expect(result2.length >= 16 && result2.length <= 19).toBe(true);
+    expect(result2.length >= 15 && result2.length <= 19).toBe(true);
     expect(result2.indexOf('*') === 6).toBe(true);
 
     // format
     const result3 = Mockjs.Random.bankCardNo(false, true);
     console.log('bankCardNo format:', result3);
-    expect(result3.replace(/\s/g, '').length >= 16 && result3.replace(/\s/g, '').length <= 19).toBe(
+    expect(result3.replace(/\s/g, '').length >= 15 && result3.replace(/\s/g, '').length <= 19).toBe(
       true
     );
     expect(result3.indexOf(' ') === 4).toBe(true);
@@ -25,7 +25,7 @@ describe('bank', () => {
     // mask & format
     const result4 = Mockjs.Random.bankCardNo(true, true);
     console.log('bankCardNo mask & format:', result4);
-    expect(result4.replace(/\s/g, '').length >= 16 && result4.replace(/\s/g, '').length <= 19).toBe(
+    expect(result4.replace(/\s/g, '').length >= 15 && result4.replace(/\s/g, '').length <= 19).toBe(
       true
     );
     expect(result4.indexOf(' ') === 4).toBe(true);

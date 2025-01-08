@@ -1,11 +1,7 @@
-import Mock from 'mockjs';
-import './bank';
-import './other';
+import { Mock, Mockjs, mockjs } from './index.basic';
+import MockUtilClass from './MockUtilClass';
 
-const Mockjs = Mock;
-const mockjs = Mock;
-
-export { Mock, Mockjs, mockjs };
+export { Mock, Mockjs, mockjs, MockUtilClass };
 
 /**
  * @deprecated Please use `import { Mockjs } from 'mockjs-extend'`

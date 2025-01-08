@@ -20,7 +20,7 @@ yarn add mockjs-extend -D
 pnpm add mockjs-extend -D
 ```
 
-### 示例
+### 示例：使用扩展的模拟数据
 
 ```javascript
 // Mockjs 等同于 mockjs 模块，同时扩展了大量的模拟数据
@@ -66,6 +66,54 @@ export default {
         icp: '@icp' // ICP备案号
       }
     ]
+  })
+};
+```
+
+### 示例：使用工具类
+
+- **mock/util.ts**
+
+```typescript
+import { MockUtilClass } from 'mockjs-extend';
+
+const mockUtil = new MockUtilClass({
+  // 模拟请求延迟时间
+  delay: 100,
+  // 响应数据发送方法
+  sendMethod: 'send',
+  // 响应基本数据结构
+  responseBasic: {
+    code: '0000',
+    message: 'mock success'
+  },
+  // 响应分页数据结构
+  responsePage(pageData) {
+    return {
+      pageNum: 1,
+      pageSize: 10,
+      'total|15-100': 20,
+      'pages|2-10': 2,
+      'data|10': [pageData]
+    };
+  }
+});
+
+export default mockUtil;
+```
+
+- **mock/login.mock.ts**
+
+```typescript
+import mockUtil from './utils';
+
+export default {
+  'POST /api/login': mockUtil.mockData({
+    data: {
+      username: '@cname',
+      mobile: '@mobile',
+      token: '@guid'
+    }
   })
 };
 ```
