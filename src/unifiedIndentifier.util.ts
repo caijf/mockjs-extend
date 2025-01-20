@@ -1,4 +1,4 @@
-import { isSocialCreditCode, randomString } from 'util-helpers';
+import { isUnifiedIdentifier, randomString } from 'util-helpers';
 import { data, isCityCode, isAreaCode } from 'lcn';
 import { randomInt } from 'ut2';
 
@@ -274,7 +274,7 @@ export function createSocialCreditCode(
   const realBodyIdentifier = bodyIdentifier || getBodyIdentifier();
 
   const precode = realOrgCode + realAreaCode + realBodyIdentifier;
-  const checkCode = isSocialCreditCode.sumCheckCode(precode);
+  const checkCode = isUnifiedIdentifier.sumCheckCode(precode);
   return precode + checkCode;
 }
 
