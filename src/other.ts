@@ -1,6 +1,6 @@
 import Mock from 'mockjs';
 import { randomString } from 'util-helpers';
-import { createSocialCreditCode } from './unifiedIndentifier.util';
+import { createUnifiedIdentifier } from './unifiedIndentifier.util';
 
 // ref: https://www.npmjs.com/package/country-code
 const countries = [
@@ -126,7 +126,7 @@ Mock.Random.extend({
 
   // 统一社会信用代码
   unifiedIdentifier() {
-    return createSocialCreditCode();
+    return createUnifiedIdentifier();
   },
   // alias unifiedIdentifier
   uid() {

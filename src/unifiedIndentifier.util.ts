@@ -264,7 +264,7 @@ export function normalizeBodyIdentifier(value: string) {
     : value;
 }
 
-export function createSocialCreditCode(
+export function createUnifiedIdentifier(
   orgCode?: string,
   areaCode?: string,
   bodyIdentifier?: string
@@ -278,6 +278,11 @@ export function createSocialCreditCode(
   return precode + checkCode;
 }
 
+/**
+ * @deprecated 即将废弃，请使用 `createUnifiedIdentifier` 替代。
+ */
+export const createSocialCreditCode = createUnifiedIdentifier;
+
 export const unifiedIdentifierUtil = {
   getRandomCityAndAreaCode,
   basicCode,
@@ -286,5 +291,6 @@ export const unifiedIdentifierUtil = {
   getRandomOrg,
   isBodyIdentifier,
   normalizeBodyIdentifier,
-  createSocialCreditCode
+  createSocialCreditCode,
+  createUnifiedIdentifier
 };
