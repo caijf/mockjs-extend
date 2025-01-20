@@ -1,7 +1,7 @@
-import { Mock, Mockjs, mockjs } from './index.basic';
+import { Mock, Mockjs, mockjs, unifiedIdentifierUtil } from './index.basic';
 import MockUtilClass from './MockUtilClass';
 
-export { Mock, Mockjs, mockjs, MockUtilClass };
+export { Mock, Mockjs, mockjs, unifiedIdentifierUtil, MockUtilClass };
 
 /**
  * @deprecated Please use `import { Mockjs } from 'mockjs-extend'`

@@ -1,4 +1,4 @@
-import { randomString } from 'util-helpers';
+import { isSocialCreditCode, randomString } from 'util-helpers';
 import { data, isCityCode, isAreaCode } from 'lcn';
 import { randomInt } from 'ut2';
 
@@ -264,33 +264,6 @@ export function normalizeBodyIdentifier(value: string) {
     : value;
 }
 
-// 基础字符组成
-const baseCodeArr = '0123456789ABCDEFGHJKLMNPQRTUWXY'.split('');
-
-// 计算校验码
-function sumCheckCode(preCode: string) {
-  // const preCodeArr = preCode.split('');
-
-  let total = 0;
-
-  // 计算字符位置对应序号和加权因子的乘积，总和
-  for (let i = 0; i < 17; i++) {
-    // 字符位置对应的基础编码序号
-    const index = baseCodeArr.findIndex((item) => item === preCode[i]);
-    // 加权因子
-    const wf = Math.pow(3, i) % 31;
-    // 计算序号和加权因子的乘积，并计算级数之和
-    total += index * wf;
-  }
-
-  // 计算整数求余函数MOD
-  const remainder = total % 31;
-  // 校验码字符值序号
-  const checkCodeIndex = remainder !== 0 ? 31 - remainder : 0;
-
-  return baseCodeArr[checkCodeIndex];
-}
-
 export function createSocialCreditCode(
   orgCode?: string,
   areaCode?: string,
@@ -301,6 +274,17 @@ export function createSocialCreditCode(
   const realBodyIdentifier = bodyIdentifier || getBodyIdentifier();
 
   const precode = realOrgCode + realAreaCode + realBodyIdentifier;
-  const checkCode = sumCheckCode(precode);
+  const checkCode = isSocialCreditCode.sumCheckCode(precode);
   return precode + checkCode;
 }
+
+export const unifiedIdentifierUtil = {
+  getRandomCityAndAreaCode,
+  basicCode,
+  organization,
+  getBodyIdentifier,
+  getRandomOrg,
+  isBodyIdentifier,
+  normalizeBodyIdentifier,
+  createSocialCreditCode
+};
