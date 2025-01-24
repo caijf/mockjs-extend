@@ -1,7 +1,7 @@
 import Mock from 'mockjs';
 import './bank';
 import './other';
-import { unifiedIdentifierUtil } from './unifiedIndentifier.util';
+import { unifiedIdentifierUtil } from './unifiedIdentifier.util';
 
 const Mockjs = Mock;
 const mockjs = Mock;

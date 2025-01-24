@@ -1,21 +1,9 @@
 // 银行
 import Mock from 'mockjs';
-import { formatBankCard, randomString, replaceChar } from 'util-helpers';
+import { formatBankCard, isBankCard, randomString, replaceChar } from 'util-helpers';
 import { cards } from 'bankcard';
 import globalBank from './bank_global_dict';
 import { randomInt } from 'ut2';
-
-function sumCheckCode(num: string | number) {
-  const numArr = (num + '').replace(/\D/g, '').split('').reverse();
-
-  let sum = 0;
-  for (let i = 0; i < numArr.length; i++) {
-    const currNum = parseInt(numArr[i]);
-    sum += i % 2 === 0 ? currNum * 2 - (currNum > 4 ? 9 : 0) : currNum;
-  }
-  const mod = sum % 10;
-  return mod !== 0 ? 10 - mod : 0;
-}
 
 function getRandomBankCard() {
   return cards[randomInt(0, cards.length - 1)];
@@ -24,7 +12,7 @@ function getRandomBankCard() {
 function createBankCardNo() {
   const card = getRandomBankCard();
   const cardNo = card.cardBin + randomString(card.len - card.cardBin.length - 1, '0123456789');
-  return cardNo + sumCheckCode(cardNo);
+  return cardNo + isBankCard.sumCheckCode(cardNo);
 }
 
 Mock.Random.extend({

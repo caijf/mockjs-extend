@@ -1,6 +1,6 @@
 import Mock from 'mockjs';
 import { randomString } from 'util-helpers';
-import { createUnifiedIdentifier } from './unifiedIndentifier.util';
+import { createUnifiedIdentifier } from './unifiedIdentifier.util';
 
 // ref: https://www.npmjs.com/package/country-code
 const countries = [
