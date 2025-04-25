@@ -45,6 +45,7 @@ export default {
         globalBankName: '@globalBankName', // 英文国际银行名称
         cglobalBankName: '@cglobalBankName', // 中文国际银行名称
 
+        utc: '@utc', // utc格式日期时间
         nid: '@nid', // 指定长度的随机数字字符串
         sid: '@sid', // 指定长度的随机字符字符串
         mobile: '@mobile', // 手机号码
@@ -217,6 +218,15 @@ Mockjs.Random.cglobalBankName(); // => 大通曼哈顿银行
 ```
 
 ### 其他
+
+#### Mockjs.Random.utc()
+
+utc格式日期时间
+
+```text
+Mockjs.Random.utc(); // => 1990-03-27T22:46:57.409Z
+Mockjs.Random.utc(); // => 2002-09-22T09:49:36.91Z
+```
 
 #### Mockjs.Random.nid(len=8)
 

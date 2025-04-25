@@ -95,6 +95,13 @@ describe('bank', () => {
 });
 
 describe('other', () => {
+  it('utc', () => {
+    const result = Mockjs.Random.utc();
+    console.log('utc:', result);
+    const utcRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{1,3}Z$/;
+    expect(utcRegex.test(result)).toBe(true);
+  });
+
   it('nid', () => {
     const result1 = Mockjs.Random.nid();
     console.log('nid:', result1);

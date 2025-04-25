@@ -48,6 +48,11 @@ const currencies = [
 const provinceShortNames = '京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼';
 
 Mock.Random.extend({
+  // utc格式日期时间
+  utc() {
+    return `${this.date()}T${this.time()}.${this.date('S')}Z`;
+  },
+
   // 随机数字id
   nid(len = 8) {
     const reg = new RegExp(`\\d{${len}}`);
