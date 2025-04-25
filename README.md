@@ -54,16 +54,16 @@ export default {
         money: '@money', // 金额
         rate: '@rate', // 费率
         sn: '@sn', // 数字字符串
-        country: '@country', // 国家英文名称
-        countryName: '@countryName', // 国家中文名称
+        country: '@country', // 英文国家名称
+        ccountry: '@ccountry', // 中文国家名称
         countryCode1: '@countryCode', // 国家三字码
         countryCode2: '@countryCode(2)', // 国家二字码
-        currency: '@currency', // 货币英文缩写
-        currencyName: '@currencyName', // 货币中文名称
+        currency: '@currency', // 货币编码
+        currencyName: '@currencyName', // 货币名称
         currencySymbol: '@currencySymbol', // 货币符号
         uid: '@uid', // 统一社会信用代码
-        company: '@company', // 公司英文名称
-        companyName: '@companyName' // 公司中文名称
+        company: '@company', // 英文公司名称
+        ccompany: '@ccompany' // 中文公司名称
         icp: '@icp' // ICP备案号
       }
     ]
@@ -117,6 +117,31 @@ export default {
     }
   })
 };
+```
+
+### 示例：自定义随机生成数据
+
+由于生成数据没有关联性，例如 `@bankCode` `@bankName` 等。如果你需要生成的数据有关联性，可以使用下列方法获取随机数据对象。
+
+```typescript
+import {
+  getRandomCurrency,
+  getRandomCountry,
+  getRandomGlobalBank,
+  getRandomBankCard
+} from 'mockjs-extend';
+
+console.log(getRandomCurrency());
+// { code: 'SEK', desc: '瑞典克朗', symbol: 'Kr', flagId: 'se' }
+
+console.log(getRandomCountry());
+// { alpha2: 'GB', alpha3: 'GBR', cn: '英国', en: 'United Kingdom' }
+
+console.log(getRandomGlobalBank());
+// { cn: '住友信托银行', en: 'Sumitomo Trust & Banking' }
+
+console.log(getRandomBankCard());
+// { bankName: '吉林银行', bankCode: 'JLBANK', cardBin: '622178', cardType: 'CC', cardTypeName: '信用卡', len: 16 }
 ```
 
 ## 文档
@@ -322,18 +347,18 @@ Mockjs.Random.sn(2, 0, 5); // => "1.83"
 
 #### Mockjs.Random.country()
 
-国家英文名称
+英文国家名称
 
 ```text
 Mockjs.Random.country(); // => Turkey
 ```
 
-#### Mockjs.Random.countryName()
+#### Mockjs.Random.ccountry()
 
-国家中文名称
+中文国家名称
 
 ```text
-Mockjs.Random.countryName(); // => 土耳其
+Mockjs.Random.ccountry(); // => 土耳其
 ```
 
 #### Mockjs.Random.countryCode(len=3)
@@ -351,7 +376,7 @@ Mockjs.Random.countryCode(2); // => TR
 
 #### Mockjs.Random.currency()
 
-货币英文缩写
+货币编码
 
 ```text
 Mockjs.Random.currency(); // => NZD
@@ -387,20 +412,20 @@ Mockjs.Random.uid(); // => 35210703CDMKJ424LA
 
 > ⚠️非真实信息，仅供测试使用，请勿用于非法用途。
 
-公司英文名称
+英文公司名称
 
 ```text
 Mockjs.Random.company(); // => Bxdmj Peurpx Aumozuufp Jpgmyky Gavxpt Wfds Co.,Ltd.
 ```
 
-#### Mockjs.Random.companyName()
+#### Mockjs.Random.ccompany()
 
 > ⚠️非真实信息，仅供测试使用，请勿用于非法用途。
 
-公司中文名称
+中文公司名称
 
 ```text
-Mockjs.Random.company(); // => 云南省世把书质派保有限公司
+Mockjs.Random.ccompany(); // => 云南省世把书质派保有限公司
 ```
 
 #### Mockjs.Random.icp()

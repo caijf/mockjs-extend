@@ -1,4 +1,5 @@
 import Mock from 'mockjs';
+import { randomInt } from 'ut2';
 import { randomString } from 'util-helpers';
 import { createUnifiedIdentifier } from './unifiedIdentifier.util';
 
@@ -46,6 +47,22 @@ const currencies = [
 ];
 
 const provinceShortNames = '京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼';
+
+/**
+ * 获取随机国家
+ */
+export function getRandomCountry() {
+  const index = randomInt(0, countries.length - 1);
+  return countries[index];
+}
+
+/**
+ * 获取随机货币
+ */
+export function getRandomCurrency() {
+  const index = randomInt(0, currencies.length - 1);
+  return currencies[index];
+}
 
 Mock.Random.extend({
   // utc格式日期时间
@@ -98,35 +115,38 @@ Mock.Random.extend({
     return this.money(precision, min, max) + '';
   },
 
-  // 国家英文名称
+  // 英文国家名称
   country() {
-    return this.pick(countries).en;
+    return getRandomCountry().en;
   },
 
-  // 国家中文名称
+  // 中文国家名称
+  ccountry() {
+    return getRandomCountry().cn;
+  },
   countryName() {
-    return this.pick(countries).cn;
+    return this.ccountry();
   },
 
   // 国家二/三字码
   countryCode(len = 3) {
     const fieldName = len === 2 ? 'alpha2' : 'alpha3';
-    return this.pick(countries)[fieldName];
+    return getRandomCountry()[fieldName];
   },
 
-  // 货币
+  // 货币编码
   currency() {
-    return this.pick(currencies).code;
+    return getRandomCurrency().code;
   },
 
   // 货币名称
   currencyName() {
-    return this.pick(currencies).desc;
+    return getRandomCurrency().desc;
   },
 
   // 货币符号
   currencySymbol() {
-    return this.pick(currencies).symbol;
+    return getRandomCurrency().symbol;
   },
 
   // 统一社会信用代码
@@ -138,14 +158,17 @@ Mock.Random.extend({
     return this.unifiedIdentifier();
   },
 
-  // 公司英文名称
+  // 英文公司名称
   company() {
     return this.title() + ' Co.,Ltd.';
   },
 
-  // 公司中文名称
-  companyName() {
+  // 中文公司名称
+  ccompany() {
     return this.province() + this.ctitle() + '有限公司';
+  },
+  companyName() {
+    return this.ccompany();
   },
 
   // ICP备案号

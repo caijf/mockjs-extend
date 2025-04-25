@@ -1,5 +1,11 @@
 import { isInteger } from 'ut2';
-import { Mockjs } from '../src';
+import {
+  Mockjs,
+  getRandomCountry,
+  getRandomBankCard,
+  getRandomGlobalBank,
+  getRandomCurrency
+} from '../src';
 import { CardType, CardTypeName } from 'bankcard';
 
 describe('bank', () => {
@@ -146,9 +152,15 @@ describe('other', () => {
     expect(result).toBeTruthy();
   });
 
-  it('countryName', () => {
-    const result = Mockjs.Random.countryName();
-    console.log('countryName:', result);
+  it('ccountry', () => {
+    const result = Mockjs.Random.ccountry();
+    console.log('ccountry:', result);
+    expect(result).toBeTruthy();
+  });
+
+  it('ccompany', () => {
+    const result = Mockjs.Random.ccompany();
+    console.log('ccompany:', result);
     expect(result).toBeTruthy();
   });
 
@@ -227,5 +239,40 @@ describe('other', () => {
     const result = Mockjs.Random.icp();
     console.log('icp:', result);
     expect(result).toBeTruthy();
+  });
+});
+
+describe('random data', () => {
+  it('getRandomCurrency', () => {
+    const result = getRandomCurrency();
+    console.log('getRandomCurrency(): ', result);
+    expect(result.code).toBeDefined();
+    expect(result.desc).toBeDefined();
+    expect(result.flagId).toBeDefined();
+    expect(result.symbol).toBeDefined();
+  });
+  it('getRandomCountry', () => {
+    const result = getRandomCountry();
+    console.log('getRandomCountry(): ', result);
+    expect(result.alpha2).toBeDefined();
+    expect(result.alpha3).toBeDefined();
+    expect(result.cn).toBeDefined();
+    expect(result.en).toBeDefined();
+  });
+  it('getRandomGlobalBank', () => {
+    const result = getRandomGlobalBank();
+    console.log('getRandomGlobalBank(): ', result);
+    expect(result.cn).toBeDefined();
+    expect(result.en).toBeDefined();
+  });
+  it('getRandomBankCard', () => {
+    const result = getRandomBankCard();
+    console.log('getRandomBankCard(): ', result);
+    expect(result.bankCode).toBeDefined();
+    expect(result.bankName).toBeDefined();
+    expect(result.cardBin).toBeDefined();
+    expect(result.cardType).toBeDefined();
+    expect(result.cardTypeName).toBeDefined();
+    expect(result.len).toBeDefined();
   });
 });

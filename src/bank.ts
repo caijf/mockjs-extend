@@ -1,11 +1,21 @@
 // 银行
 import Mock from 'mockjs';
+import { randomInt } from 'ut2';
 import { formatBankCard, isBankCard, randomString, replaceChar } from 'util-helpers';
 import { cards } from 'bankcard';
 import globalBank from './bank_global_dict';
-import { randomInt } from 'ut2';
 
-function getRandomBankCard() {
+/**
+ * 获取随机国际银行
+ */
+export function getRandomGlobalBank() {
+  return globalBank[randomInt(0, globalBank.length - 1)];
+}
+
+/**
+ * 获取随机银行
+ */
+export function getRandomBankCard() {
   return cards[randomInt(0, cards.length - 1)];
 }
 
@@ -79,11 +89,11 @@ Mock.Random.extend({
 
   // 国际银行名称 - 英文
   globalBankName(): string {
-    return this.pick(globalBank).en;
+    return getRandomGlobalBank().en;
   },
 
   // 国际银行名称 - 中文
   cglobalBankName(): string {
-    return this.pick(globalBank).cn;
+    return getRandomGlobalBank().cn;
   }
 });
