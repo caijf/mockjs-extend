@@ -440,3 +440,32 @@ Mockjs.Random.icp(); // => 陕ICP备69861741号
 
 [npm]: https://img.shields.io/npm/v/mockjs-extend.svg
 [npm-url]: https://npmjs.com/package/mockjs-extend
+
+## 常见问题
+
+### 数据同时存在 `id` 和 `@id` 时，`@id` 不生效
+
+```typescript
+// before
+Mockjs.mock({
+  'list|1-10': [
+    {
+      'id|+1': 1,
+      name: '@cname',
+      idNumber: '@id' // 值跟 `id` 一样
+    }
+  ]
+});
+
+// after
+// 使用 `Mockjs.Random.id()` 来生成身份证号
+Mockjs.mock({
+  'list|1-10': [
+    {
+      'id|+1': 1,
+      name: '@cname',
+      idNumber: Mockjs.Random.id()
+    }
+  ]
+});
+```
