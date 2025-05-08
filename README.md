@@ -63,7 +63,7 @@ export default {
         currencySymbol: '@currencySymbol', // 货币符号
         uid: '@uid', // 统一社会信用代码
         company: '@company', // 英文公司名称
-        ccompany: '@ccompany' // 中文公司名称
+        ccompany: '@ccompany', // 中文公司名称
         icp: '@icp' // ICP备案号
       }
     ]
