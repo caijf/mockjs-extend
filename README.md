@@ -119,6 +119,21 @@ export default {
 };
 ```
 
+- **mock/user.mock.ts**
+
+```typescript
+import mockUtil from './utils';
+
+export default {
+  'POST /api/user/list': mockUtil.mockPageData({
+    id: '@sid',
+    username: '@cname',
+    mobile: '@mobile',
+    email: '@email'
+  })
+};
+```
+
 ### 示例：自定义随机生成数据
 
 由于生成数据没有关联性，例如 `@bankCode` `@bankName` 等。如果你需要生成的数据有关联性，可以使用下列方法获取随机数据对象。

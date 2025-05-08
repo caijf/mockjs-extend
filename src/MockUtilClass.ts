@@ -84,7 +84,7 @@ type MockParam<
  *
  * @param {Object} [options] 配置项
  * @example
- * const mockIns = new MockUtilClass({
+ * const mockUtil = new MockUtilClass({
  *   // 默认配置
  *   delay: 100,
  *   sendMethod: 'send',
@@ -100,10 +100,10 @@ type MockParam<
  *   }
  * });
  *
- * await mockIns.mockData({ data: { icp: '@icp' } })(req, res);
+ * await mockUtil.mockData({ data: { icp: '@icp' } })(req, res);
  * // 内部调用 res.send({ code: '0000', message: 'mock success', data: { icp: '陕ICP备69861741号' } })
  *
- * await mockIns.mockPageData({ icp: '@icp' })(req, res);
+ * await mockUtil.mockPageData({ icp: '@icp' })(req, res);
  * // 内部调用 res.send({ code: '0000', message: 'mock success', pageNum: 1, pageSize: 10, total: 32, pages: 6, data: [ { icp: '陕ICP备69861741号' }, { icp: '闽ICP备82861788号' } ] })
  *
  */
@@ -134,8 +134,8 @@ class MockUtilClass<
    * @param data 响应数据
    * @returns
    * @example
-   * const mockIns = new MockUtilClass();
-   * await mockIns.mockData({ data: { icp: '@icp' } })(req, res);
+   * const mockUtil = new MockUtilClass();
+   * await mockUtil.mockData({ data: { icp: '@icp' } })(req, res);
    * // 内部调用 res.send({ code: '0000', message: 'mock success', data: { icp: '陕ICP备69861741号' } });
    */
   mockData(data: MockParam<TRequest, TResponse> = {}) {
@@ -167,8 +167,8 @@ class MockUtilClass<
    * @param pageData 单页数据
    * @returns
    * @example
-   * const mockIns = new MockUtilClass();
-   * await mockIns.mockPageData({ icp: '@icp' })(req, res);
+   * const mockUtil = new MockUtilClass();
+   * await mockUtil.mockPageData({ icp: '@icp' })(req, res);
    * // 内部调用 `res.send({ code: '0000', message: 'mock success', pageNum: 1, pageSize: 10, total: 32, pages: 6, data: [ { icp: '陕ICP备69861741号' }, { icp: '闽ICP备82861788号' } ] })`
    */
   mockPageData(pageData: Record<string, any> = {}) {
