@@ -80,7 +80,7 @@ import { MockUtilClass } from 'mockjs-extend';
 
 const mockUtil = new MockUtilClass({
   // 模拟请求延迟时间
-  delay: 100,
+  delay: 500,
   // 响应数据发送方法
   sendMethod: 'send',
   // 响应基本数据结构
