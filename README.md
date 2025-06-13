@@ -56,8 +56,8 @@ export default {
         sn: '@sn', // 数字字符串
         country: '@country', // 英文国家名称
         ccountry: '@ccountry', // 中文国家名称
-        countryCode1: '@countryCode', // 国家三字码
-        countryCode2: '@countryCode(2)', // 国家二字码
+        countryCode: '@countryCode', // 国家三字码
+        countryCode2: '@countryCode2', // 国家二字码
         currency: '@currency', // 货币编码
         currencyName: '@currencyName', // 货币名称
         currencySymbol: '@currencySymbol', // 货币符号
@@ -376,16 +376,19 @@ Mockjs.Random.country(); // => Turkey
 Mockjs.Random.ccountry(); // => 土耳其
 ```
 
-#### Mockjs.Random.countryCode(len=3)
+#### Mockjs.Random.countryCode()
 
-国家二/三字码
-
-- **len**
-
-默认为 3 ，可选。2-二字码 3-三字码
+国家三字码
 
 ```text
 Mockjs.Random.countryCode(); // => TUR
+```
+
+#### Mockjs.Random.countryCode2()
+
+国家二字码
+
+```text
 Mockjs.Random.countryCode(2); // => TR
 ```
 

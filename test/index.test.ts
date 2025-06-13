@@ -170,6 +170,18 @@ describe('other', () => {
     expect(result).toBeTruthy();
   });
 
+  it('countryCode2', () => {
+    const result = Mockjs.Random.countryCode2();
+    console.log('countryCode2:', result);
+    expect(result).toBeTruthy();
+  });
+
+  it('countryCode3', () => {
+    const result = Mockjs.Random.countryCode3();
+    console.log('countryCode3:', result);
+    expect(result).toBeTruthy();
+  });
+
   it('currency', () => {
     const result = Mockjs.Random.currency();
     console.log('currency:', result);

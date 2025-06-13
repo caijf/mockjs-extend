@@ -134,6 +134,16 @@ Mock.Random.extend({
     return getRandomCountry()[fieldName];
   },
 
+  // 国家二字码
+  countryCode2() {
+    return this.countryCode(2);
+  },
+
+  // 国家三字码
+  countryCode3() {
+    return this.countryCode();
+  },
+
   // 货币编码
   currency() {
     return getRandomCurrency().code;
