@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express';
-import { isFunction, sleep } from 'ut2';
+import { isFunction, isObjectLike, sleep } from 'ut2';
 import { Mockjs } from './index.basic';
 
 // 模拟接口延迟时间
@@ -140,10 +140,20 @@ class MockUtilClass<
    *
    * @param data 响应数据
    * @returns
+   * - 如果参数是回调函数（异步），且返回值不是对象，则直接返回该值。
+   * - 如果参数是对象或回调函数（异步）返回值是对象，则返回一个包含 `Mockjs` 语法的响应数据。
    * @example
    * const mockUtil = new MockUtilClass();
    * await mockUtil.mockData({ data: { icp: '@icp' } })(req, res);
    * // 内部调用 res.send({ code: '0000', message: 'mock success', data: { icp: '陕ICP备69861741号' } });
+   *
+   * // 文件下载
+   * await mockUtil.mockData((req, res) => {
+   *   res.setHeader('Access-Control-Expose-Headers', '*');
+   *   res.setHeader('Content-Type', 'image/jpeg');
+   *   res.setHeader('Content-Disposition', 'attachment;filename=120x120.jpg');
+   *   res.sendFile('path/to/120x120.jpg');
+   * });
    */
   mockData(data: MockParam<TRequest, TResponse> = {}) {
     return async (req: TRequest, res: TResponse) => {
@@ -152,8 +162,8 @@ class MockUtilClass<
       let realData = data;
       if (typeof data === 'function') {
         realData = await data(req, res);
-        if (!realData) {
-          return;
+        if (!isObjectLike(realData)) {
+          return realData;
         }
       }
 

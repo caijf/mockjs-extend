@@ -69,4 +69,15 @@ describe('MockUtilClass', () => {
     });
     expect(sendFn).toHaveBeenCalledTimes(0);
   });
+
+  test('mockData with function', async () => {
+    const mockIns = new MockUtilClass();
+
+    await mockIns.mockData((req, res) => {
+      res.end({ foo: 'bar' });
+    })(req, res);
+    expect(sendFn).toHaveBeenCalledTimes(0);
+    expect(endFn).toHaveBeenCalledTimes(1);
+    expect(endFn.mock.calls[0][0]).toEqual({ foo: 'bar' });
+  });
 });
