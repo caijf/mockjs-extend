@@ -106,6 +106,13 @@ type MockParam<
  * await mockUtil.mockPageData({ icp: '@icp' })(req, res);
  * // 内部调用 res.send({ code: '0000', message: 'mock success', pageNum: 1, pageSize: 10, total: 32, pages: 6, data: [ { icp: '陕ICP备69861741号' }, { icp: '闽ICP备82861788号' } ] })
  *
+ * // 文件下载
+ * await mockUtil.mockData((req, res) => {
+ *   res.setHeader('Access-Control-Expose-Headers', '*');
+ *   res.setHeader('Content-Type', 'image/jpeg');
+ *   res.setHeader('Content-Disposition', 'attachment;filename=120x120.jpg');
+ *   res.sendFile('path/to/120x120.jpg');
+ * });
  */
 class MockUtilClass<
   TRequest extends Record<string, any> = Request,
