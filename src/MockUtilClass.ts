@@ -112,7 +112,7 @@ type MockParam<
  *   res.setHeader('Content-Type', 'image/jpeg');
  *   res.setHeader('Content-Disposition', 'attachment;filename=120x120.jpg');
  *   res.sendFile('path/to/120x120.jpg');
- * });
+ * })(req, res);
  */
 class MockUtilClass<
   TRequest extends Record<string, any> = Request,
@@ -153,7 +153,7 @@ class MockUtilClass<
    *   res.setHeader('Content-Type', 'image/jpeg');
    *   res.setHeader('Content-Disposition', 'attachment;filename=120x120.jpg');
    *   res.sendFile('path/to/120x120.jpg');
-   * });
+   * })(req, res);
    */
   mockData(data: MockParam<TRequest, TResponse> = {}) {
     return async (req: TRequest, res: TResponse) => {

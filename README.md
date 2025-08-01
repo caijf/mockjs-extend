@@ -134,6 +134,21 @@ export default {
 };
 ```
 
+- **mock/files.mock.ts**
+
+```typescript
+import mockUtil from './utils';
+
+export default {
+  'POST /api/files/download': mockUtil.mockData((req, res) => {
+    res.setHeader('Access-Control-Expose-Headers', '*');
+    res.setHeader('Content-Type', 'image/jpeg');
+    res.setHeader('Content-Disposition', 'attachment;filename=120x120.jpg');
+    res.sendFile('path/to/120x120.jpg');
+  })
+};
+```
+
 ### 示例：自定义随机生成数据
 
 由于生成数据没有关联性，例如 `@bankCode` `@bankName` 等。如果你需要生成的数据有关联性，可以使用下列方法获取随机数据对象。
