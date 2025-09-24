@@ -80,4 +80,26 @@ describe('MockUtilClass', () => {
     expect(endFn).toHaveBeenCalledTimes(1);
     expect(endFn.mock.calls[0][0]).toEqual({ foo: 'bar' });
   });
+
+  test('对象解构', async () => {
+    const { mockData, mockPageData } = new MockUtilClass();
+
+    await mockData({ data: { foo: 'baz' } })(req, res);
+    expect(sendFn).toHaveBeenCalledTimes(1);
+    expect(sendFn.mock.calls[0][0]).toEqual({
+      code: '0000',
+      message: 'mock success',
+      data: { foo: 'baz' }
+    });
+
+    await mockPageData({ foo: 'baz' })(req, res);
+    expect(sendFn).toHaveBeenCalledTimes(2);
+    expect(sendFn.mock.calls[1][0]).toMatchObject({
+      code: '0000',
+      message: 'mock success',
+      pageNum: 1,
+      pageSize: 10
+    });
+    expect(endFn).toHaveBeenCalledTimes(0);
+  });
 });

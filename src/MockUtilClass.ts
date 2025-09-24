@@ -131,6 +131,9 @@ class MockUtilClass<
       responsePage: ResponsePageConstructor,
       ...options
     };
+
+    this.mockData = this.mockData.bind(this);
+    this.mockPageData = this.mockPageData.bind(this);
   }
 
   /**

@@ -103,34 +103,26 @@ const mockUtil = new MockUtilClass({
 export default mockUtil;
 ```
 
-- **mock/login.mock.ts**
-
-```typescript
-import mockUtil from './utils';
-
-export default {
-  'POST /api/login': mockUtil.mockData({
-    data: {
-      username: '@cname',
-      mobile: '@mobile',
-      token: '@guid'
-    }
-  })
-};
-```
-
 - **mock/user.mock.ts**
 
 ```typescript
 import mockUtil from './utils';
 
+const user = {
+  id: '@sid',
+  username: '@cname',
+  mobile: '@mobile',
+  email: '@email'
+};
+
 export default {
-  'POST /api/user/list': mockUtil.mockPageData({
-    id: '@sid',
-    username: '@cname',
-    mobile: '@mobile',
-    email: '@email'
-  })
+  'POST /api/user/login': mockUtil.mockData({
+    data: {
+      user,
+      token: '@guid'
+    }
+  }),
+  'POST /api/user/list': mockUtil.mockPageData(user)
 };
 ```
 
