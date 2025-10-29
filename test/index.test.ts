@@ -252,6 +252,24 @@ describe('other', () => {
     console.log('icp:', result);
     expect(result).toBeTruthy();
   });
+
+  it('provinceCode', () => {
+    const result = Mockjs.Random.provinceCode();
+    console.log('provinceCode:', result);
+    expect(result).toBeTruthy();
+  });
+
+  it('cityCode', () => {
+    const result = Mockjs.Random.cityCode();
+    console.log('cityCode:', result);
+    expect(result).toBeTruthy();
+  });
+
+  it('areaCode', () => {
+    const result = Mockjs.Random.areaCode();
+    console.log('areaCode:', result);
+    expect(result).toBeTruthy();
+  });
 });
 
 describe('random data', () => {

@@ -2,6 +2,7 @@ import Mock from 'mockjs';
 import { randomInt } from 'ut2';
 import { randomString } from 'util-helpers';
 import { createUnifiedIdentifier } from './unifiedIdentifier.util';
+import { getRandomArea, getRandomCity, getRandomProvince } from './lcn.util';
 
 // ref: https://www.npmjs.com/package/country-code
 const countries = [
@@ -65,128 +66,233 @@ export function getRandomCurrency() {
 }
 
 Mock.Random.extend({
-  // utc格式日期时间
+  /**
+   * utc格式日期时间
+   */
   utc() {
     return `${this.date()}T${this.time()}.${this.date('S')}Z`;
   },
 
-  // 随机数字id
+  /**
+   * 随机数字id
+   * @param len 随机数字id长度
+   * @returns 随机数字id
+   */
   nid(len = 8) {
     const reg = new RegExp(`\\d{${len}}`);
     return Mock.mock(reg);
   },
 
-  // 随机字符串id
+  /**
+   * 随机字符串id
+   * @param len 随机字符串id长度
+   * @returns 随机字符串id
+   */
   sid(len = 8) {
     return randomString(len);
   },
 
-  // 电话号码
+  /**
+   * 电话号码
+   */
   tel() {
     return '2203' + this.nid(4);
   },
 
-  // 手机号码
-  phone() {
+  /**
+   * 手机号码
+   */
+  mobile() {
     return `1${Mock.mock(/[3-9]/)}${this.nid(9)}`;
   },
-  // 手机号码别名
-  mobile() {
-    return this.phone();
+  /**
+   * 手机号码
+   * @alias mobile
+   */
+  phone() {
+    return this.mobile();
   },
 
-  // 年龄
+  /**
+   * 年龄
+   */
   age(min = 0, max = 100) {
     return this.natural(min, max);
   },
 
-  // 金额
+  /**
+   * 金额
+   * @param precision 精度，默认`2`
+   * @param min 最小值，默认`0`
+   * @param max 最大值，默认`10000`
+   * @returns 金额
+   */
   money(precision = 2, min = 0, max = 10000) {
     return this.float(min, Math.max(max - 1, min), precision, precision);
   },
 
-  // 费率
+  /**
+   * 费率
+   * @param precision 精度，默认`2`
+   * @param min 最小值，默认`0`
+   * @param max 最大值，默认`1`
+   * @returns 费率
+   */
   rate(precision = 2, min = 0, max = 1) {
     return this.money(precision, min, max);
   },
 
-  // 数字字符串
+  /**
+   * 数字字符串，常用于字符串金额。
+   * @param precision 精度，默认`2`
+   * @param min 最小值，默认`0`
+   * @param max 最大值，默认`10000`
+   * @returns 数字字符串
+   */
   sn(precision = 2, min = 0, max = 10000) {
     return this.money(precision, min, max) + '';
   },
 
-  // 英文国家名称
+  /**
+   * 英文国家名称
+   */
   country() {
     return getRandomCountry().en;
   },
 
-  // 中文国家名称
+  /**
+   * 中文国家名称
+   */
   ccountry() {
     return getRandomCountry().cn;
   },
+  /**
+   * 中文国家名称
+   * @alias ccountry
+   */
   countryName() {
     return this.ccountry();
   },
 
-  // 国家二/三字码
+  /**
+   * 国家二/三字码
+   * @param len 国家码长度，默认`3`
+   * @returns 国家二/三字码
+   */
   countryCode(len = 3) {
     const fieldName = len === 2 ? 'alpha2' : 'alpha3';
     return getRandomCountry()[fieldName];
   },
 
-  // 国家二字码
+  /**
+   * 国家二字码
+   */
   countryCode2() {
     return this.countryCode(2);
   },
 
-  // 国家三字码
+  /**
+   * 国家三字码
+   */
   countryCode3() {
     return this.countryCode();
   },
 
-  // 货币编码
+  /**
+   * 货币编码
+   */
   currency() {
     return getRandomCurrency().code;
   },
 
-  // 货币名称
+  /**
+   * 货币名称
+   */
   currencyName() {
     return getRandomCurrency().desc;
   },
 
-  // 货币符号
+  /**
+   * 货币符号
+   */
   currencySymbol() {
     return getRandomCurrency().symbol;
   },
 
-  // 统一社会信用代码
+  /**
+   * 统一社会信用代码
+   */
   unifiedIdentifier() {
     return createUnifiedIdentifier();
   },
-  // alias unifiedIdentifier
+  /**
+   * 统一社会信用代码
+   * @alias unifiedIdentifier
+   */
   uid() {
     return this.unifiedIdentifier();
   },
 
-  // 英文公司名称
+  /**
+   * 英文公司名称
+   */
   company() {
     return this.title() + ' Co.,Ltd.';
   },
 
-  // 中文公司名称
+  /**
+   * 中文公司名称
+   */
   ccompany() {
     return this.province() + this.ctitle() + '有限公司';
   },
+  /**
+   * 中文公司名称
+   * @alias ccompany
+   */
   companyName() {
     return this.ccompany();
   },
 
-  // ICP备案号
+  /**
+   * ICP备案号
+   */
   icpNo() {
     return randomString(1, provinceShortNames) + 'ICP备' + this.nid() + '号';
   },
-  // alias icpNo
+  /**
+   * ICP备案号
+   * @alias icpNo
+   */
   icp() {
     return this.icpNo();
+  },
+
+  /**
+   * 省份编码
+   */
+  provinceCode() {
+    return getRandomProvince().code;
+  },
+
+  /**
+   * 城市编码
+   */
+  cityCode() {
+    return getRandomCity().code;
+  },
+
+  /**
+   * 区县编码
+   */
+  areaCode() {
+    return getRandomArea().code;
+  },
+  /**
+   * 区县编码
+   * @alias areaCode
+   */
+  countyCode() {
+    return this.areaCode();
   }
 });

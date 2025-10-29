@@ -64,7 +64,10 @@ export default {
         uid: '@uid', // 统一社会信用代码
         company: '@company', // 英文公司名称
         ccompany: '@ccompany', // 中文公司名称
-        icp: '@icp' // ICP备案号
+        icp: '@icp', // ICP备案号
+        provinceCode: '@provinceCode', // 省份编码
+        cityCode: '@cityCode', // 城市编码
+        areaCode: '@areaCode' // 区县编码
       }
     ]
   })
@@ -301,17 +304,9 @@ Mockjs.Random.sid(5); // => kYOiT
 Mockjs.Random.tel(); // => 37316547
 ```
 
-#### Mockjs.Random.phone()
-
-手机号码
-
-```text
-Mockjs.Random.phone(); // => 17837351484
-```
-
 #### Mockjs.Random.mobile()
 
-手机号码，同 phone
+手机号码
 
 ```text
 Mockjs.Random.mobile(); // => 14561418878
@@ -461,6 +456,30 @@ ICP备案号
 
 ```text
 Mockjs.Random.icp(); // => 陕ICP备69861741号
+```
+
+#### Mockjs.Random.provinceCode()
+
+省份编码
+
+```text
+Mockjs.Random.provinceCode(); // => 350000
+```
+
+#### Mockjs.Random.cityCode()
+
+城市编码
+
+```text
+Mockjs.Random.cityCode(); // => 350500
+```
+
+#### Mockjs.Random.areaCode()
+
+区县编码
+
+```text
+Mockjs.Random.areaCode(); // => 350502
 ```
 
 [npm]: https://img.shields.io/npm/v/mockjs-extend.svg

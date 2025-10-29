@@ -1,22 +1,5 @@
 import { isUnifiedIdentifier, randomString } from 'util-helpers';
-import { data, isCityCode, isAreaCode } from 'lcn';
-import { randomInt } from 'ut2';
-
-const cities: typeof data = [];
-const areas: typeof data = [];
-
-data.forEach((item) => {
-  if (isCityCode(item.code)) {
-    cities.push(item);
-  } else if (isAreaCode(item.code)) {
-    areas.push(item);
-  }
-});
-
-export const getRandomCityAndAreaCode = () => {
-  const cityAndAreas = [...cities, ...areas];
-  return cityAndAreas[randomInt(0, cityAndAreas.length - 1)].code;
-};
+import { getRandomCityAndAreaCode } from './lcn.util';
 
 export const basicCode = '0123456789ABCDEFGHJKLMNPQRTUWXY';
 
@@ -284,6 +267,9 @@ export function createUnifiedIdentifier(
 export const createSocialCreditCode = createUnifiedIdentifier;
 
 export const unifiedIdentifierUtil = {
+  /**
+   * @deprecated 即将废弃，请使用 `getRandomCityAndAreaCode` 替代。
+   */
   getRandomCityAndAreaCode,
   basicCode,
   organization,
