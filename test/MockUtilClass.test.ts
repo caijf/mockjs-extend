@@ -1,3 +1,4 @@
+import { isArray } from 'ut2';
 import { MockUtilClass } from '../src';
 
 const sendFn = jest.fn();
@@ -92,7 +93,7 @@ describe('MockUtilClass', () => {
       data: { foo: 'baz' }
     });
 
-    await mockPageData({ foo: 'baz' })(req, res);
+    await mockPageData({ foo: 'baz' }, 'xxx')(req, res);
     expect(sendFn).toHaveBeenCalledTimes(2);
     expect(sendFn.mock.calls[1][0]).toMatchObject({
       code: '0000',
@@ -100,6 +101,7 @@ describe('MockUtilClass', () => {
       pageNum: 1,
       pageSize: 10
     });
+    expect(isArray(sendFn.mock.calls[1][0].xxx)).toBeTruthy();
     expect(endFn).toHaveBeenCalledTimes(0);
   });
 });

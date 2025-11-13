@@ -12,13 +12,13 @@ const ResponseBasicConstructor = {
 } as Record<string, any>;
 
 // 响应数据分页结构
-const ResponsePageConstructor = (pageData: Record<string, any> = {}) =>
+const ResponsePageConstructor = (pageData: Record<string, any> = {}, key = 'data') =>
   ({
     pageNum: 1, //	当前页码
     pageSize: 10, //	每页条数
     'total|15-100': 20, //总条数
     'pages|2-10': 2, //	总页数
-    'data|10': [pageData] //	响应数据
+    [`${key}|10`]: [pageData] //	响应数据
   }) as Record<string, any>;
 
 // 配置项
@@ -61,16 +61,17 @@ type Options = {
    * 自定义分页数据结构。
    *
    * @param pageData 单页数据
+   * @param key 自定义分页数据键名。有些场景需要自定义分页数据键名。默认 `data`
    * @returns
-   * @default (pageData = {}) => ({
+   * @default (pageData = {}, key = 'data') => ({
    *   pageNum: 1,            // 当前页码
    *   pageSize: 10,          // 每页条数
    *   'total|15-100': 20,    // 总条数
    *   'pages|2-10': 2,       // 总页数
-   *   'data|10': [pageData]  // 响应数据
+   *   [`${key}|10`]: [pageData]  // 响应数据
    * });
    */
-  responsePage?: (pageData?: Record<string, any>) => Record<string, any>;
+  responsePage?: (pageData?: Record<string, any>, key?: string) => Record<string, any>;
 };
 
 // 参数类型
@@ -89,13 +90,13 @@ type MockParam<
  *   delay: 100,
  *   sendMethod: 'send',
  *   responseBasic: { code: '0000', message: 'mock success' },
- *   responsePage(pageData){
+ *   responsePage(pageData, key = 'data'){
  *     return {
  *       pageNum: 1,
  *       pageSize: 10,
  *       'total|15-100': 20,
  *       'pages|2-10': 2,
- *       'data|10': [pageData]
+ *       [`${key}|10`]: [pageData]
  *     }
  *   }
  * });
@@ -185,14 +186,15 @@ class MockUtilClass<
    * 响应数据支持 `Mockjs` 的语法规范。
    *
    * @param pageData 单页数据
+   * @param key 自定义分页数据键名。有些场景需要自定义分页数据键名。默认 `data`
    * @returns
    * @example
    * const mockUtil = new MockUtilClass();
    * await mockUtil.mockPageData({ icp: '@icp' })(req, res);
    * // 内部调用 `res.send({ code: '0000', message: 'mock success', pageNum: 1, pageSize: 10, total: 32, pages: 6, data: [ { icp: '陕ICP备69861741号' }, { icp: '闽ICP备82861788号' } ] })`
    */
-  mockPageData(pageData: Record<string, any> = {}) {
-    return this.mockData(this.options.responsePage!(pageData));
+  mockPageData(pageData: Record<string, any> = {}, key?: string) {
+    return this.mockData(this.options.responsePage!(pageData, key));
   }
 }
 

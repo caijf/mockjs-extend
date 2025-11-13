@@ -92,13 +92,13 @@ const mockUtil = new MockUtilClass({
     message: 'mock success'
   },
   // 响应分页数据结构
-  responsePage(pageData) {
+  responsePage(pageData, key = 'data') {
     return {
       pageNum: 1,
       pageSize: 10,
       'total|15-100': 20,
       'pages|2-10': 2,
-      'data|10': [pageData]
+      [`${key}|10`]: [pageData]
     };
   }
 });
