@@ -114,6 +114,14 @@ type MockParam<
  *   res.setHeader('Content-Disposition', 'attachment;filename=120x120.jpg');
  *   res.sendFile('path/to/120x120.jpg');
  * })(req, res);
+ *
+ * // 响应失败，不同错误码
+ * await mockUtil.mockData((req, res) => {
+ *   res.status(400).send({
+ *     code: '3001',
+ *     message: 'mock failed',
+ *   });
+ * })(req, res)
  */
 class MockUtilClass<
   TRequest extends Record<string, any> = Request,
