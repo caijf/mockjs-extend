@@ -378,12 +378,12 @@ Mockjs.Random.country(); // => Turkey
 Mockjs.Random.ccountry(); // => 土耳其
 ```
 
-#### Mockjs.Random.countryCode()
+#### Mockjs.Random.countryCode3()
 
 国家三字码
 
 ```text
-Mockjs.Random.countryCode(); // => TUR
+Mockjs.Random.countryCode3(); // => TUR
 ```
 
 #### Mockjs.Random.countryCode2()
@@ -391,7 +391,7 @@ Mockjs.Random.countryCode(); // => TUR
 国家二字码
 
 ```text
-Mockjs.Random.countryCode(2); // => TR
+Mockjs.Random.countryCode2(); // => TR
 ```
 
 #### Mockjs.Random.currency()
